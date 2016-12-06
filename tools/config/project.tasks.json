@@ -3,6 +3,35 @@
     "tslint",
     "build.test",
     "karma.run"
+  ],
+  "build.dev": [
+    "clean.once",
+    "build.assets.dev",
+    "build.fonts",
+    "build.html_css",
+    "build.js.dev",
+    "build.index.dev"
+  ],
+  "build.prod": [
+    "check.tools",
+    "clean.prod",
+    "tslint",
+    "build.assets.prod",
+    "build.fonts",
+    "build.html_css",
+    "copy.prod",
+    "build.js.prod",
+    "build.bundles",
+    "build.bundles.app",
+    "minify.bundles",
+    "build.index.prod"
+  ],
+  "build.test": [
+    "build.assets.dev",
+    "build.fonts",
+    "build.html_css",
+    "build.js.dev",
+    "build.js.test",
+    "build.index.dev"
   ]
 }
-

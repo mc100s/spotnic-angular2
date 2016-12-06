@@ -1,0 +1,116 @@
+[
+  {
+    "id": 1,
+    "name": "Parking Franklin-D. Roosevelt Champs-Élysées",
+    "coord": {
+      "lat": 48.8698889,
+      "lng": 2.3097236
+    },
+    "address": "45/47 Avenue Franklin Roosevelt",
+    "postcode": "75008",
+    "city": "Paris",
+    "country": "France",
+    "maxHeight": 1.85,
+    "openingHours": "24h/24 - 7j/7",
+    "parkingAccess": "https://www.onepark.fr/parkings/2796-parking-franklin-d-roosevelt-champs-elysees-effia",
+    "company": "EFFIA",
+    "servicesId": [],
+    "pricingRules": [
+      {
+        "duration": 60,
+        "price": 4.6
+      },
+      {
+        "duration": 120,
+        "price": 9.4
+      },
+      {
+        "duration": 180,
+        "price": 13.4
+      },
+      {
+        "duration": 240,
+        "price": 17
+      },
+      {
+        "duration": 300,
+        "price": 20.6
+      },
+      {
+        "duration": 360,
+        "price": 24.2
+      },
+      {
+        "duration": 420,
+        "price": 27
+      },
+      {
+        "duration": 480,
+        "price": 29.80
+      },
+      {
+        "duration": 540,
+        "price": 31
+      },
+      {
+        "duration": 600,
+        "price": 32.2
+      },
+      {
+        "duration": 660,
+        "price": 33.4
+      },
+      {
+        "duration": 1440,
+        "price": 34.6
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Parking Quai Branly Tour Eiffel",
+    "coord": {
+      "lat": 48.8618216,
+      "lng": 2.2988509
+    },
+    "address": "25 Quai Branly",
+    "postcode": "75007",
+    "city": "Paris",
+    "country": "France",
+    "maxHeight": 2,
+    "openingHours": "8h à 21h30 7j/7",
+    "parkingAccess": "https://www.onepark.fr/parkings/42-parking-quai-branly-tour-eiffel-saemes",
+    "company": "SAEMES",
+    "servicesId": [],
+    "pricingRules": [
+      {
+        "duration": 60,
+        "price": 3.8
+      },
+      {
+        "duration": 120,
+        "price": 7.6
+      },
+      {
+        "duration": 180,
+        "price": 11.4
+      },
+      {
+        "duration": 240,
+        "price": 15.2
+      },
+      {
+        "duration": 300,
+        "price": 19
+      },
+      {
+        "duration": 360,
+        "price": 22.8
+      },
+      {
+        "duration": 1440,
+        "price": 26.6
+      }
+    ]
+  }
+]

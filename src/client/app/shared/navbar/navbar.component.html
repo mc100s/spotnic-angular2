@@ -1,4 +1,45 @@
-<nav>
-  <a [routerLink]="['/']" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">HOME</a>
-  <a [routerLink]="['/about']" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">ABOUT</a>
+
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="img/spotnic-logo-white.png"></a>
+      <!-- <a class="navbar-brand" href="#">Spotnic</a> -->
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li [routerLink]="['/']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a>Recherche</a></li>
+        <li [routerLink]="['/contact']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a>Contact</a></li>
+        <li [routerLink]="['/paris/grand-palais']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a>Grand Palais</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li (click)="authService.login()" *ngIf="!authService.authenticated()">
+          <button class="btn">  
+            <a>Se connecter</a>
+          </button>
+        </li>
+        <li (click)="authService.login('signUp')" *ngIf="!authService.authenticated()">
+          <button class="btn">  
+            <a>Créer un compte</a>
+          </button>
+        </li>
+
+        <li class="dropdown" *ngIf="authService.authenticated()">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{authService.userProfile.firstname}} <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <!-- <li role="separator" class="divider"></li> -->
+            <li (click)="authService.logout()"><a>Déconnexion</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
 </nav>

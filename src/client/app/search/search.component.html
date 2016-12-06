@@ -1,0 +1,377 @@
+
+
+<section class="rw-wrapper">
+  <h2 class="rw-sentence">
+    <span>Spotnic vous trouve une place de parking</span>
+    <span class="rw-words">
+      <span>très simplement</span>
+      <span>super rapidement</span>
+      <span>à prix compétitifs</span>
+      <span>gratuitement</span>
+      <span>avec un voiturier</span>
+      <span>pour votre voiture</span>
+      <span>pour votre camion</span>
+      <span>partout en Europe</span>
+      <span>dans l'espace</span>
+    </span>
+  </h2>
+  <span class="not-mobile">
+    Réservez votre parking en France et en Europe avec les meilleurs plans
+  </span>
+</section>
+
+
+<form [formGroup]="searchForm"
+  (ngSubmit)="onSubmit(searchForm.value)">
+  <div class="container">
+    <div class="row">
+      <!-- ########## BEGIN of inputs ##########  -->
+      <div class="col-sm-6">
+        <div class="search-box">
+          <h3>Votre stationnement</h3>
+
+          <div class="inner-addon left-addon">
+            <i class="glyphicon icomoon icon-room"></i>
+            <input 
+              type="text"
+              class="form-control"
+              placeholder="Destination"
+              [formControl]="searchPlacesTerms"
+              formControlName="destination"
+              (focus)="inputFocused('destination')"
+              required
+              />
+            <div [hidden]="searchForm.controls.destination.valid || !displayErrors" class="alert alert-danger">Le champ "destination" est obligatoire</div>
+          </div>
+
+          <br />
+
+          <fieldset formGroupName="dates">
+
+
+            <div class="inner-addon left-addon">
+              <i class="glyphicon icomoon icon-date_from"></i>
+              <input 
+                type="button" 
+                class="form-control top-input"
+                formControlName="from"
+                value="{{dateFrom | momentDate }}" 
+                (focus)="inputFocused('from')"
+              >
+            </div>
+            <div *ngIf="!dateFrom">
+              <div class="input-button-placeholder">Début du stationnement</div>
+            </div>
+
+            <div class="inner-addon left-addon">
+              <i class="glyphicon icomoon icon-date_to"></i>
+              <input
+                type="button"
+                class="form-control bottom-input"
+                formControlName="to"
+                value="{{dateTo | momentDate }}" 
+                (focus)="inputFocused('to')"
+              >
+            </div>
+            <div *ngIf="!dateTo">
+              <div class="input-button-placeholder">Fin du stationnement</div>
+            </div>
+          </fieldset>
+
+          <br />
+
+
+          <div class="inner-addon left-addon">
+            <i class="glyphicon icomoon icon-directions_car"></i>
+            <input 
+              type="text"
+              class="form-control"
+              placeholder="Véhicule"
+              [formControl]="searchVehiclesTerms"
+              formControlName="vehicle"
+              (focus)="inputFocused('vehicle')"
+              />
+          </div>
+
+
+          <div *ngIf="step == 1">
+            <br />
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-offset-6 col-sm-6">
+                  <button
+                    type="button"
+                    (focus)="inputFocused('')"
+                    (click)="goToStep2(searchForm.value)"
+                    (keypress)="goToStep2(searchForm.value)"
+                    class="btn btn-primary btn-block">Rechercher</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="step == 2 && !authService.authenticated()">
+            <br />
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md-offset-6 col-md-6">
+                  <button
+                    type="button"
+                    (focus)="inputFocused('')"
+                    (click)="authService.login()"
+                    class="btn btn-primary btn-block">  
+                      Je me connecte
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md-offset-6 col-md-6">
+                  <button
+                    type="button"
+                    (focus)="inputFocused('')"
+                    (click)="authService.login('signUp')"
+                    class="btn btn-primary btn-block">  
+                      Je me crée un compte
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div *ngIf="step >= 2 && authService.authenticated()">
+            <hr>
+
+            <p class="question">Comment préférez-vous être recontacté ?</p>
+            <div>
+              <input type="radio" formControlName="preferedContact" value="phone" class="magic-radio" id="preferedContact-phone">
+              <label for="preferedContact-phone">Par téléphone</label>
+            </div>
+            <div>
+              <input type="radio" formControlName="preferedContact" value="sms" class="magic-radio" id="preferedContact-sms">
+              <label for="preferedContact-sms">Par SMS</label>
+            </div>
+            <div>
+              <input type="radio" formControlName="preferedContact" value="email" class="magic-radio" id="preferedContact-email">
+              <label for="preferedContact-email">Par e-mail</label>
+            </div>
+            <div>
+              <input type="radio" formControlName="preferedContact" value="nothing" class="magic-radio" id="preferedContact-nothing">
+              <label for="preferedContact-nothing">Peu importe</label>
+            </div>
+
+            <p class="question">A quelle moment ?</p>
+            <div>
+              <input type="radio" formControlName="preferedTime" value="now" class="magic-radio" id="preferedTime-now">
+              <label for="preferedTime-now">Tout de suite</label>
+            </div>
+            <div>
+              <input type="radio" formControlName="preferedTime" value="today" class="magic-radio" id="preferedTime-today">
+              <label for="preferedTime-today">Dans la journée</label>
+            </div>
+            <div>
+              <input type="radio" formControlName="preferedTime" value="nothing" class="magic-radio" id="preferedTime-nothing">
+              <label for="preferedTime-nothing">Peu importe</label>
+            </div>
+            <div>
+              <input type="radio" formControlName="preferedTime" value="other" class="magic-radio" id="preferedTime-other">
+              <label for="preferedTime-other">
+                Autre <span *ngIf="searchForm.value['preferedTime'] == 'other'">:</span>
+                <input
+                  *ngIf="searchForm.value['preferedTime'] == 'other'"
+                  type="text"
+                  class="form-control"
+                  placeholder="Ce soir ; Demain entre 12h et 14 ; ..."
+                  formControlName="preferedTimeDetail"
+                  >
+              </label>
+            </div>
+
+            <p class="question">Vous avez des commentaires par rapport à cette demande ?</p>
+
+            <textarea
+              class="form-control"
+              rows="3"
+              formControlName="comments"
+              placeholder="(facultatif)">
+            </textarea>
+
+            <br />
+
+            <div class="row">
+              <div class="form-group">
+                <div class="col-sm-12 col-md-offset-3 col-md-9 col-lg-offset-4 col-lg-8">
+                  <button
+                    type="submit"
+                    class="btn btn-primary btn-block">
+                    <span>J'envoie ma demande de stationnement</span>
+                    <!-- <span *ngIf="!allFieldsAreFilled">Je me fais recontacter</span>
+                    <span *ngIf="allFieldsAreFilled">Je m'inscris et je me fais recontacter</span> -->
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- ########## END of inputs ########## -->
+
+      <!-- ########## BEGIN of helpers ########## -->
+      <div class="col-sm-6" [hidden]="inputSelected != 'destination'">
+        <div class="search-box search-box-destination">
+          <h3>Choix de l'adresse de destination</h3>
+          <div *ngIf="!(places | async)" class="no-result">
+            Veuillez taper une adresse
+          </div>
+          <div *ngIf="(places | async)?.length==0" class="no-result">
+            Aucune adresse trouvée
+          </div>
+          <ul class="search-list">
+            <li *ngFor="let i = index; let p of places | async" class="search-list-item location-item {{iChildSelected == i ? 'hover' : ''}}" (click)="placeSelected(p.description)">
+              {{p.description}}
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-sm-6" [hidden]="inputSelected != 'from'">
+        <div class="search-box">
+          <h3>Choix de la date de début</h3>
+          <ng2-datetimepicker [ID]="'dateFrom'" (dateSelected)="dateFromSelected($event)"></ng2-datetimepicker>
+        </div>
+      </div>
+
+      <div class="col-sm-6" [hidden]="inputSelected != 'to'">
+        <div class="search-box">
+          <h3>Choix de la date de fin</h3>
+          <ng2-datetimepicker [ID]="'dateTo'" [minDate]="dateFrom" (dateSelected)="dateToSelected($event)"></ng2-datetimepicker>
+        </div>
+      </div>
+
+      <div class="col-sm-6" [hidden]="inputSelected != 'vehicle'">
+        <div class="search-box search-box-vehicle">
+          <h3>Choix du véhicule</h3>
+          <!-- {{searchVehiclesTerms.value}} -->
+          <div *ngIf="searchVehiclesTerms.value == ''" class="no-result">
+            Veuillez taper votre modèle de véhicule ou en sélectionner un générique
+          </div>
+          <ul class="search-list">
+            <li *ngFor="let i = index; let v of vehicles | async"
+              class="search-list-item car-item"
+              [class.hover]="iChildSelected == i"
+              [class.two-wheeler-item]="v.type == 'two-wheeler'"
+              [class.truck-item]="v.type == 'truck'"
+              [class.spacecraft-item]="v.type == 'spacecraft'"
+              (click)="vehicleSelected((v.brand ? v.brand + ' ' : '') + v.name)"
+              (click)="iChildSelected = i">
+              {{v.brand}} {{v.name}}
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-sm-6" [hidden]="step != 2 || authService.authenticated() || inputSelected != ''">
+        <div class="search-box">
+          <h3>Inscrivez-vous pour continuer</h3>
+
+          <div class="center">
+            <a class="btn" (click)="authService.login('signUp')">
+              <img src="img/icon-user.png" class="big-icon">
+            </a>
+          </div>
+
+          <p>Notre solution est encore toute jeune et n'est ouverte qu'aux utilisateurs connectés.</p>
+          <p>Créez-vous un compte si vous n'êtes pas encore inscrit et profitez des meilleures offres de stationnement !</p>
+        </div>
+      </div>
+
+      <div class="col-sm-6" [hidden]="step != 2 || !authService.authenticated() || inputSelected != ''">
+        <div class="search-box">
+          <h3>Prenez contact avec un de nos agents</h3>
+
+          <div class="center">
+            <img src="img/icon-astronaut.png" class="big-icon">
+
+            <p class="lead">Notre solution est encore toute jeune et n'est qu'en version bêta.</p>
+            <p class="lead">Pas de panique ! Un de nos agents va trouver pour vous la place de stationnement idéale. En plus, vous êtes assurés d'avoir une <u>réduction minimum de 10%</u> dans n'importe quel parking en France&nbsp;!</p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6" [hidden]="step != 3 || inputSelected == 'destination' || inputSelected == 'from' || inputSelected == 'to' || inputSelected == 'vehicle'">
+        <div class="search-box">
+          <h3>Demande envoyée !</h3>
+          <div class="center">
+            <img src="img/icon-satellite.png" class="big-icon">
+            <br>
+            <p class="lead">Merci {{searchForm.value['firstname']}} ! Nous allons vous rencontacter d'ici quelques minutes ;)</p>
+          </div>
+        </div>
+      </div>
+      <!-- ########## END of helpers ########## -->
+    </div>
+
+  </div>
+
+
+  <div class="container mobile-container">
+    <div class="search-box">
+      <p class="center lead">
+        Laissez vos coordonnées pour être recontacté
+      </p>
+
+      <input 
+        type="text"
+        class="form-control"
+        placeholder="Prénom"
+        formControlName="firstname"
+        (focus)="inputFocused('firstname')"
+        (keyup)="checkIfAllFieldsAreFilled()"
+        />
+      <input 
+        type="text"
+        class="form-control"
+        placeholder="Nom"
+        formControlName="lastname"
+        (focus)="inputFocused('lastname')"
+        (keyup)="checkIfAllFieldsAreFilled()"
+        />
+      <input 
+        type="tel"
+        class="form-control"
+        placeholder="Téléphone"
+        formControlName="phone"
+        (focus)="inputFocused('phone')"
+        (keyup)="checkIfAllFieldsAreFilled()"
+        />
+
+      <table class="css-table">
+        <tr>
+          <td><input type="checkbox" formControlName="mobileAndNow"></td>
+          <td>Je suis en voiture et je cherche une place tout de suite</td>
+        </tr>
+      </table>
+      
+      <button
+        type="submit"
+        class="btn btn-primary btn-block">
+        <span *ngIf="!allFieldsAreFilled">Je me fais recontacter</span>
+        <span *ngIf="allFieldsAreFilled">Je m'inscris et je me fais recontacter</span>
+      </button>
+
+      <br>
+      <br>
+
+      <p class="center lead">
+        Ou appelez-nous au <br>
+        <strong><a href="tel:+33634012345">06.34.01.23.45</a></strong>
+      </p>
+    </div>
+  </div>
+  
+</form>
+

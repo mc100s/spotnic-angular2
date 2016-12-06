@@ -1,0 +1,379 @@
+#map {
+  height: 400px; /* Value computed */
+  position: relative;
+  width: 100%;
+}
+
+.search-bar {
+  background: white;
+  position: relative;
+  z-index: 100;
+  margin-top: -20px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.search-bar .search-form {
+  padding: 10px;
+  display: inline-block;
+}
+
+.search-bar .search-form .date-input {
+  width: 290px;
+}
+
+.search-bar .helper-box {
+  background: white;
+  position: absolute;
+  padding: 20px;
+  top: 60px;
+  margin-left: -150px;
+}
+
+/*.search-bar .helper-box.card::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  margin-left: -7px;
+  top: -7px;
+  border: 7px solid transparent;
+  border-top: 0;
+  border-bottom-color: white;
+}*/
+
+.search-bar .helper-box .btn-validate {
+  position: absolute;
+  right: 105px;
+  bottom: 23px;
+}
+
+.parkings-list {
+  position: absolute;
+  /*position: relative;*/
+  z-index: 50;
+  height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  float: left;
+}
+
+.parkings-list .card {
+  height: 100px;
+  margin: 10px;
+}
+
+.card tbody, .card tbody tr, .card tbody tr td:first-child {
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+}
+
+.card tbody, .card tbody tr, .card tbody tr td:last-child {
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit;
+}
+
+
+.card .blue-col {
+  width: 100px;
+  background-color: #425cbb;
+  color: white;
+  text-align: center;
+  padding: 5px;
+}
+.card:hover .blue-col, .card.hover .blue-col {
+  background-color: #6485ff;
+}
+
+.card .blue-col .price {
+  font-size: 20px;
+  line-height: 0.8em;
+}
+
+.card .blue-col .glyphicon.icomoon {
+  font-size: 16px;
+}
+
+
+table.card .white-col {
+  width: 178px; /* 178 + 10 + 12 = 200 */
+  padding: 10px;
+  padding-left: 12px;
+}
+
+.card .white-col .parking-name {
+  width: inherit;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  font-size: 1.1em;
+  font-weight: bolder;
+  color: #425cbb;
+}
+.card:hover .white-col .parking-name, .card.hover .white-col .parking-name {
+  color: #6485ff;
+}
+
+.card .white-col .parking-address {
+  font-size: 0.8em;
+  color: #555;
+}
+
+
+.card .information {
+  margin-left: 110px; /* 100px (img width) + 10px */
+}
+
+.card .information .parking-name {
+  font-size: 1.1em;
+  font-weight: bolder;
+  color: #425cbb;
+}
+
+.card .information .parking-address {
+  font-size: 0.8em;
+  color: #555;
+}
+
+#legend {
+  font-family: Arial, sans-serif;
+  background: #fff;
+  padding: 10px;
+  margin: 10px;
+}
+
+#legend .box {
+  display: inline-block;
+  border: 1px solid;
+  padding: 2px 4px;
+  font-size: 7px;
+}
+#legend .box .glyphicon.icomoon{
+  font-size: 8px;
+}
+#legend .box.red {
+  border-color: rgb(255, 0, 0);
+  background-color: rgba(255, 0, 0, 0.2);
+}
+#legend .box.yellow {
+  border-color: rgb(255, 220, 0);
+  background-color: rgba(255, 220, 0, 0.2);
+}
+#legend .box.green {
+  border-color: rgb(20, 210, 20);
+  background-color: rgba(20, 210, 20, 0.2);
+}
+
+
+/* ************************** */
+/* ***** Parking Detail ***** */
+/* ************************** */
+sd-parking-detail {
+  position: absolute;
+  z-index: 10;
+  height: 400px; /* Value computed */
+  width: 40%;
+  min-width: 400px;
+  left: 320px;
+  margin-top: 10px;
+  overflow-y: scroll;
+}
+
+.parking-detail {
+  padding-bottom: 20px;
+  color: #484848;
+}
+
+.parking-detail > .row {
+  margin: 0;
+}
+
+.parking-detail button.close {
+  display: block;
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  right: 0;
+  z-index: 10;
+  opacity: 0.5;
+}
+
+.parking-detail button.close:hover {
+  opacity: 0.7;
+}
+
+.parking-detail .cover {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.parking-detail .cover img {
+  position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: auto;
+    -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+}
+
+.parking-detail .content {
+  padding: 20px;
+}
+
+.parking-detail h2 {
+  font-family: Montserrat;
+  font-size: 24px;
+}
+
+.parking-detail .address {
+  color: #606060;
+}
+
+.parking-detail .summary-icons {
+  /*padding: 15px 0 ;*/
+  text-align: center;
+}
+.parking-detail .summary-icons > div {
+  padding: 15px 15px 10px 15px;
+}
+.parking-detail .summary-icons i {
+  font-size: 2.5em;
+}
+.parking-detail .summary-icons .description {
+  font-size: 0.9em;
+}
+
+.parking-detail ul {
+  padding: 0;
+  margin: 0;
+}
+.parking-detail ul li {
+  list-style: none;
+  padding: 5px 0;
+  line-height: 1.2em;
+}
+.parking-detail ul li:first-child {
+  padding: 0 0 5px 0;
+}
+
+.parking-detail .booking-widget {
+  margin: -80px auto 0px auto;
+}
+.parking-detail .booking-widget th {
+  height: 80px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #425cbb;
+  color: white;
+  text-align: center;
+  font-weight: normal;
+  font-size: 12px;
+}
+.parking-detail .booking-widget th .price {
+  font-size: 24px;
+}
+.parking-detail .booking-widget th .glyphicon.icomoon {
+  font-size: 16px;
+}
+
+.parking-detail .booking-widget tbody {
+  border: 1px solid #425cbb;
+  border-top: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.parking-detail .booking-widget td {
+  padding: 10px 20px 0px 20px;
+}
+.parking-detail .booking-widget tr:last-child td {
+  padding-bottom: 10px;
+}
+
+/*.parking-detail .booking-widget tr:last-child {*/
+.parking-detail .booking-widget tr {
+  text-align: center;
+}
+
+
+
+.parking-detail .booking-widget .label-button {
+  margin-bottom: 1px;
+  font-size: 0.9em;
+  font-weight: bolder;
+}
+
+.parking-detail .booking-widget .btn {
+  white-space: normal;
+}
+
+.parking-detail .booking-widget .btn-booking {
+  white-space: normal;
+  padding: 7px 20px;
+  min-width: 90%;
+}
+
+.parking-detail hr {
+  border-color: #d0dae0;
+}
+.parking-detail > hr {
+  margin: 15px;
+}
+
+.parking-detail .contact-box {
+  text-align: center;
+}
+
+.parking-detail .contact-box img {
+  width: 100px
+}
+
+.parking-detail .service {
+  margin-bottom: 6px;
+  line-height: 1.1em;
+}
+
+
+
+/* ********************************** */
+/* ***** Media for small screns ***** */
+/* ********************************** */
+@media screen and (max-width: 1200px) {
+  .parkings-list .card {
+    height: 80px;
+    font-size: 90%;
+  }
+  .card .blue-col {
+    width: 80px;
+  }
+  table.card .white-col {
+    width: 138px; /* 138 + 12 + 10 = 160 */
+  }
+
+  sd-parking-detail {
+    left: 260px;
+  }
+}
+
+
+
+
+
+/* TEST */
+
+::-webkit-scrollbar{
+  width:0px;
+} 
+
+::-webkit-scrollbar-thumb{
+  background-color:rgba(0,0,0, 0.1);
+  border-radius:10px;
+}
+::-webkit-scrollbar-thumb:active{
+  background-color:rgba(0,0,0, 0.2);
+} 
+

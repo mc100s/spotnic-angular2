@@ -1,0 +1,103 @@
+<div class="search-bar">
+  <!-- <img src="img/capture-temp.png" style="margin: 20px; width: 800px;"> -->
+  <form
+    [formGroup]="searchForm"
+    novalidate
+    class="form-inline search-form"
+    (ngSubmit)="onSubmit(searchForm.value, searchForm.valid)">
+
+      <!-- We'll add our form controls here -->
+
+
+    <div class="form-group">
+      <label class="sr-only">Entrée</label>
+      <div class="inner-addon left-addon">
+        <i class="glyphicon icomoon icon-date_from"></i>
+        <input  
+          placeholder="Entrée"
+          spellcheck="false"
+          class="form-control date-input"
+          formControlName="from"
+          value="{{dateFrom | momentDate }}" 
+          (focus)="inputSelected = 'from'"
+          (focusout)="inputSelected = ''">
+      </div>
+      <div class="helper-box card" *ngIf="inputSelected == 'from'">
+        <ng2-datetimepicker [ID]="'searchDateFrom'" [minDate]="defaultDateFrom" [defaultDate]="defaultDateFrom" (dateSelected)="dateFromSelected($event)"></ng2-datetimepicker>
+        <!-- <button class="btn btn-primary btn-validate" (click)="inputSelected = ''">Valider</button> -->
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="sr-only">Sortie</label>
+      <div class="inner-addon left-addon">
+        <i class="glyphicon icomoon icon-date_to"></i>
+        <input
+          placeholder="Sortie" 
+          spellcheck="false"
+          class="form-control date-input"
+          formControlName="to"
+          value="{{dateTo | momentDate }}" 
+          (focus)="inputSelected = 'to'"
+          (focusout)="inputSelected = ''">
+      </div>
+      <div class="helper-box card" *ngIf="inputSelected == 'to'">
+        <ng2-datetimepicker [ID]="'searchDateTo'" [minDate]="defaultDateFrom" [defaultDate]="defaultDateTo" (dateSelected)="dateToSelected($event)"></ng2-datetimepicker>
+        <!-- <button class="btn btn-primary btn-validate" (click)="inputSelected = ''">Valider</button> -->
+      </div>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Rechercher</button>
+
+  </form>
+</div>
+
+<div id="parkings-list" class="parkings-list">
+
+  <table 
+    *ngFor="let offer of offers | async"
+    class="card clickable id-{{offer.parking.id}}"
+    (click)="onSelect(offer)"
+    (mouseenter)='onHover(offer.parking)'
+    (mouseleave)='onEndHover(offer.parking)'
+    >
+    <tbody>
+      <tr>
+        <td class="white-col">
+          <div class="parking-name">
+            {{offer.parking.name}}
+          </div>
+          <div class="parking-address">
+            {{offer.parking.address}}, {{offer.parking.postcode}} {{offer.parking.city}}
+          </div>
+          <!-- <div class="parking-services">
+            <i class="glyphicon icomoon icon-home" tooltip="Parking couvert"></i>
+          </div> -->
+        </td>
+        <td class="blue-col">
+          <span class="price">{{offer.price | eurCurrency}}</span> <br>
+          {{offer.walkingDist}} <br>
+          <i class="glyphicon icomoon icon-directions_walk"></i>{{offer.walkingTime}} min
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<sd-parking-detail
+  *ngIf="selectedOffer"
+  [offer]="selectedOffer"
+  [map]="map"
+  (onClosed)="onParkingDetailClosed()"
+  class="card"
+  ></sd-parking-detail>
+
+
+<div id="map"></div>
+<div id="legend" class="card">
+  
+  <div class="box green"><i class="glyphicon icomoon icon-directions_walk"></i>5 min</div>
+  <div class="box yellow"><i class="glyphicon icomoon icon-directions_walk"></i>10 min</div>
+  <div class="box red"><i class="glyphicon icomoon icon-directions_walk"></i>15 min</div>
+</div>

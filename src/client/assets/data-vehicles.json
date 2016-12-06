@@ -1,0 +1,3138 @@
+[
+  {
+    "id": 1,
+    "name": "Voiture (< 1,80m)",
+    "l": 5000,
+    "w": 1900,
+    "h": 1800
+  },
+  {
+    "id": 2,
+    "name": "Deux roues",
+    "type": "two-wheeler",
+    "l": 2170,
+    "w": 1000,
+    "h": 1100
+  },
+  {
+    "id": 3,
+    "name": "Utilitaire (< 3,00m)",
+    "type": "truck",
+    "l": 6000,
+    "w": 2450,
+    "h": 3000
+  },
+  {
+    "id": 4,
+    "name": "Camping-car (< 3,00m)",
+    "type": "truck",
+    "l": 6000,
+    "w": 2450,
+    "h": 3000
+  },
+  {
+    "id": 101,
+    "name": "Renault Clio",
+    "l": 4062,
+    "w": 1732,
+    "h": 1448
+  },
+  {
+    "id": 102,
+    "name": "Peugeot 208",
+    "l": 3962,
+    "w": 1739,
+    "h": 1460
+  },
+  {
+    "id": 103,
+    "name": "Citroën C3",
+    "l": 3990,
+    "w": 1745,
+    "h": 1470
+  },
+
+  {
+    "id": 1001,
+    "brand": "Alfa Romeo",
+    "name": "MiTo",
+    "l": 4063,
+    "w": 1721,
+    "h": 1446
+  },
+  {
+    "id": 1002,
+    "brand": "Alfa Romeo",
+    "name": "4C",
+    "l": 3989,
+    "w": 1864,
+    "h": 1183
+  },
+  {
+    "id": 1003,
+    "name": "Alfa Romeo Giulietta",
+    "l": 4351,
+    "w": 1798,
+    "h": 1465
+  },
+  {
+    "id": 1004,
+    "name": "Alfa Romeo Giulia",
+    "l": 4643,
+    "w": 1860,
+    "h": 1436
+  },
+  {
+    "id": 1005,
+    "name": "Aston Martin V8 Vantage Coupe",
+    "l": 4385,
+    "w": 1865,
+    "h": 1260
+  },
+  {
+    "id": 1006,
+    "name": "Aston Martin V12 Vantage S",
+    "l": 4385,
+    "w": 1865,
+    "h": 1250
+  },
+  {
+    "id": 1007,
+    "name": "Aston Martin DB11",
+    "l": 4739,
+    "w": 1940,
+    "h": 1279
+  },
+  {
+    "id": 1008,
+    "name": "Aston Martin Rapide S",
+    "l": 5020,
+    "w": 1921,
+    "h": 1350
+  },
+  {
+    "id": 1009,
+    "name": "Aston Martin Vanquish Coupe",
+    "l": 4692,
+    "w": 1912,
+    "h": 1294
+  },
+  {
+    "id": 1010,
+    "name": "Aston Martin Vanquish Volante",
+    "l": 4728,
+    "w": 1912,
+    "h": 1294
+  },
+  {
+    "id": 1011,
+    "name": "Audi A1",
+    "l": 3973,
+    "w": 1740,
+    "h": 1416
+  },
+  {
+    "id": 1012,
+    "name": "Audi A1 Sportback",
+    "l": 3973,
+    "w": 1746,
+    "h": 1422
+  },
+  {
+    "id": 1013,
+    "name": "Audi S1",
+    "l": 3975,
+    "w": 1740,
+    "h": 1417
+  },
+  {
+    "id": 1014,
+    "name": "Audi A3",
+    "l": 4241,
+    "w": 1777,
+    "h": 1424
+  },
+  {
+    "id": 1015,
+    "name": "Audi A3 Sportback",
+    "l": 4313,
+    "w": 1785,
+    "h": 1426
+  },
+  {
+    "id": 1016,
+    "name": "Audi A3 Cabrio",
+    "l": 4423,
+    "w": 1793,
+    "h": 1409
+  },
+  {
+    "id": 1017,
+    "name": "Audi A3 Berline",
+    "l": 4458,
+    "w": 1796,
+    "h": 1416
+  },
+  {
+    "id": 1018,
+    "name": "Audi S3",
+    "l": 4254,
+    "w": 1777,
+    "h": 1401
+  },
+  {
+    "id": 1019,
+    "name": "Audi A4",
+    "l": 4726,
+    "w": 1842,
+    "h": 1427
+  },
+  {
+    "id": 1020,
+    "name": "Audi A4 Avant",
+    "l": 4725,
+    "w": 1842,
+    "h": 1434
+  },
+  {
+    "id": 1021,
+    "name": "Audi A4 allroad quattro",
+    "l": 4750,
+    "w": 1842,
+    "h": 1493
+  },
+  {
+    "id": 1022,
+    "name": "Audi S4",
+    "l": 4745,
+    "w": 1842,
+    "h": 1407
+  },
+  {
+    "id": 1023,
+    "name": "Audi A5 Coupé",
+    "l": 4673,
+    "w": 1846,
+    "h": 1371
+  },
+  {
+    "id": 1024,
+    "name": "Audi A5 Sportback",
+    "l": 4712,
+    "w": 1854,
+    "h": 1391
+  },
+  {
+    "id": 1025,
+    "name": "Audi S5",
+    "l": 4640,
+    "w": 1854,
+    "h": 1369
+  },
+  {
+    "id": 1026,
+    "name": "Audi A6",
+    "l": 4933,
+    "w": 1874,
+    "h": 1455
+  },
+  {
+    "id": 1027,
+    "name": "Audi A6 Avant",
+    "l": 4943,
+    "w": 1874,
+    "h": 1461
+  },
+  {
+    "id": 1028,
+    "name": "Audi A7 Sportback",
+    "l": 4974,
+    "w": 1911,
+    "h": 1420
+  },
+  {
+    "id": 1029,
+    "name": "Audi A8",
+    "l": 5135,
+    "w": 1949,
+    "h": 1460
+  },
+  {
+    "id": 1030,
+    "name": "Audi A8 L",
+    "l": 5265,
+    "w": 1949,
+    "h": 1471
+  },
+  {
+    "id": 1031,
+    "name": "Audi TT Coupé",
+    "l": 4177,
+    "w": 1832,
+    "h": 1353
+  },
+  {
+    "id": 1032,
+    "name": "Audi R8",
+    "l": 4426,
+    "w": 1940,
+    "h": 1240
+  },
+  {
+    "id": 1033,
+    "name": "Audi Q2",
+    "l": 4191,
+    "w": 1794,
+    "h": 1508
+  },
+  {
+    "id": 1034,
+    "name": "Audi Q3",
+    "l": 4388,
+    "w": 1831,
+    "h": 1608
+  },
+  {
+    "id": 1035,
+    "name": "Audi Q5",
+    "l": 4629,
+    "w": 1898,
+    "h": 1655
+  },
+  {
+    "id": 1036,
+    "name": "Audi SQ5",
+    "l": 4644,
+    "w": 1911,
+    "h": 1624
+  },
+  {
+    "id": 1037,
+    "name": "Audi Q7",
+    "l": 5052,
+    "w": 1968,
+    "h": 1740
+  },
+  {
+    "id": 1038,
+    "name": "BMW Série 1",
+    "l": 4329,
+    "w": 1765,
+    "h": 1440
+  },
+  {
+    "id": 1039,
+    "name": "BMW i3",
+    "l": 3999,
+    "w": 1775,
+    "h": 1578
+  },
+  {
+    "id": 1040,
+    "name": "BMW Série 2 Coupé",
+    "l": 4432,
+    "w": 1774,
+    "h": 1418
+  },
+  {
+    "id": 1041,
+    "name": "BMW Série 2 Active Tourer",
+    "l": 4342,
+    "w": 1800,
+    "h": 1555
+  },
+  {
+    "id": 1042,
+    "name": "BMW Série 2 Gran Tourer",
+    "l": 4556,
+    "w": 1800,
+    "h": 1641
+  },
+  {
+    "id": 1043,
+    "name": "BMW M2 Coupé",
+    "l": 4468,
+    "w": 1854,
+    "h": 1410
+  },
+  {
+    "id": 1044,
+    "name": "BMW X1",
+    "l": 4439,
+    "w": 1821,
+    "h": 1612
+  },
+  {
+    "id": 1045,
+    "name": "BMW Série 3",
+    "l": 4633,
+    "w": 1811,
+    "h": 1429
+  },
+  {
+    "id": 1046,
+    "name": "BMW Série 3 Touring",
+    "l": 4633,
+    "w": 1811,
+    "h": 1429
+  },
+  {
+    "id": 1047,
+    "name": "BMW M3 Berline",
+    "l": 4671,
+    "w": 1877,
+    "h": 1430
+  },
+  {
+    "id": 1048,
+    "name": "BMW Série 3 Gran Turismo",
+    "l": 4824,
+    "w": 1828,
+    "h": 1508
+  },
+  {
+    "id": 1049,
+    "name": "BMW X3",
+    "l": 4657,
+    "w": 1881,
+    "h": 1678
+  },
+  {
+    "id": 1050,
+    "name": "BMW Série 4 Coupé",
+    "l": 4638,
+    "w": 1825,
+    "h": 1377
+  },
+  {
+    "id": 1051,
+    "name": "BMW Série 4 Gran Coupé",
+    "l": 4638,
+    "w": 1825,
+    "h": 1389
+  },
+  {
+    "id": 1052,
+    "name": "BMW Série 4 Cabrio",
+    "l": 4638,
+    "w": 1825,
+    "h": 1384
+  },
+  {
+    "id": 1053,
+    "name": "BMW M4 Coupé",
+    "l": 4671,
+    "w": 1870,
+    "h": 1383
+  },
+  {
+    "id": 1054,
+    "name": "BMW Série 5",
+    "l": 4907,
+    "w": 1860,
+    "h": 1464
+  },
+  {
+    "id": 1055,
+    "name": "BMW Série 5 Touring",
+    "l": 4907,
+    "w": 1860,
+    "h": 1462
+  },
+  {
+    "id": 1056,
+    "name": "BMW Série 5 Gran Turismo",
+    "l": 5004,
+    "w": 1901,
+    "h": 1559
+  },
+  {
+    "id": 1057,
+    "name": "BMW M5 Saloon",
+    "l": 4910,
+    "w": 1891,
+    "h": 1467
+  },
+  {
+    "id": 1058,
+    "name": "BMW Série 6 Coupé",
+    "l": 4894,
+    "w": 1894,
+    "h": 1369
+  },
+  {
+    "id": 1059,
+    "name": "BMW M6 Coupé",
+    "l": 4898,
+    "w": 1899,
+    "h": 1374
+  },
+  {
+    "id": 1060,
+    "name": "BMW X4",
+    "l": 4671,
+    "w": 1881,
+    "h": 1624
+  },
+  {
+    "id": 1061,
+    "name": "BMW X5",
+    "l": 4886,
+    "w": 1938,
+    "h": 1762
+  },
+  {
+    "id": 1062,
+    "name": "BMW X6",
+    "l": 4909,
+    "w": 1989,
+    "h": 1702
+  },
+  {
+    "id": 1063,
+    "name": "BMW Z4",
+    "l": 4239,
+    "w": 1790,
+    "h": 1291
+  },
+  {
+    "id": 1064,
+    "name": "BMW i8",
+    "l": 4689,
+    "w": 1942,
+    "h": 1298
+  },
+  {
+    "id": 1065,
+    "name": "BMW Série 7",
+    "l": 5098,
+    "w": 1902,
+    "h": 1467
+  },
+  {
+    "id": 1066,
+    "name": "Chevrolet Camaro",
+    "l": 4783,
+    "w": 1900,
+    "h": 1340
+  },
+  {
+    "id": 1067,
+    "name": "Chevrolet Corvette",
+    "l": 4492,
+    "w": 1872,
+    "h": 1239
+  },
+  {
+    "id": 1068,
+    "name": "Citroën C1",
+    "l": 3466,
+    "w": 1630,
+    "h": 1460
+  },
+  {
+    "id": 1069,
+    "name": "Citroën C-Zero",
+    "l": 3475,
+    "w": 1475,
+    "h": 1608
+  },
+  {
+    "id": 1070,
+    "name": "Citroën E-Méhari",
+    "l": 3809,
+    "w": 1728,
+    "h": 1653
+  },
+  {
+    "id": 1072,
+    "name": "Citroën C3 Picasso",
+    "l": 4101,
+    "w": 1766,
+    "h": 1631
+  },
+  {
+    "id": 1073,
+    "name": "Citroën C4 Cactus",
+    "l": 4157,
+    "w": 1729,
+    "h": 1530
+  },
+  {
+    "id": 1074,
+    "name": "Citroën C4",
+    "l": 4329,
+    "w": 1789,
+    "h": 1489
+  },
+  {
+    "id": 1075,
+    "name": "Citroën C4 Aircross",
+    "l": 4341,
+    "w": 1799,
+    "h": 1625
+  },
+  {
+    "id": 1076,
+    "name": "Citroën C4 Picasso",
+    "l": 4438,
+    "w": 1826,
+    "h": 1625
+  },
+  {
+    "id": 1077,
+    "name": "Citroën Grand C4 Picasso",
+    "l": 4597,
+    "w": 1826,
+    "h": 1638
+  },
+  {
+    "id": 1078,
+    "name": "Citroën C-Elysée",
+    "l": 4427,
+    "w": 1748,
+    "h": 1466
+  },
+  {
+    "id": 1079,
+    "name": "Citroën C5",
+    "l": 4779,
+    "w": 1860,
+    "h": 1451
+  },
+  {
+    "id": 1080,
+    "name": "Citroën C5 Tourer",
+    "l": 4829,
+    "w": 1860,
+    "h": 1495
+  },
+  {
+    "id": 1081,
+    "name": "Citroën Nemo Multispace",
+    "l": 3959,
+    "w": 1684,
+    "h": 1782
+  },
+  {
+    "id": 1082,
+    "name": "Citroën Berlingo Multispace",
+    "l": 4380,
+    "w": 1810,
+    "h": 1862
+  },
+  {
+    "id": 1083,
+    "name": "Citroën SpaceTourer XS",
+    "l": 4606,
+    "w": 1920,
+    "h": 1905
+  },
+  {
+    "id": 1084,
+    "name": "Citroën SpaceTourer M",
+    "l": 4956,
+    "w": 1920,
+    "h": 1890
+  },
+  {
+    "id": 1085,
+    "name": "Citroën SpaceTourer XL",
+    "l": 5306,
+    "w": 1920,
+    "h": 1890
+  },
+  {
+    "id": 1086,
+    "name": "Dacia Sandero",
+    "l": 4058,
+    "w": 1733,
+    "h": 1518
+  },
+  {
+    "id": 1087,
+    "name": "Dacia Sandero Stepway",
+    "l": 4081,
+    "w": 1733,
+    "h": 1618
+  },
+  {
+    "id": 1088,
+    "name": "Dacia Logan",
+    "l": 4347,
+    "w": 1733,
+    "h": 1517
+  },
+  {
+    "id": 1089,
+    "name": "Dacia Logan MCV",
+    "l": 4492,
+    "w": 1733,
+    "h": 1550
+  },
+  {
+    "id": 1090,
+    "name": "Dacia Duster",
+    "l": 4315,
+    "w": 1822,
+    "h": 1695
+  },
+  {
+    "id": 1091,
+    "name": "Dacia Lodgy",
+    "l": 4498,
+    "w": 1751,
+    "h": 1680
+  },
+  {
+    "id": 1092,
+    "name": "Dacia Lodgy Stepway",
+    "l": 4521,
+    "w": 1751,
+    "h": 1680
+  },
+  {
+    "id": 1093,
+    "name": "Dacia Dokker",
+    "l": 4363,
+    "w": 1751,
+    "h": 1852
+  },
+  {
+    "id": 1094,
+    "name": "Dacia Dokker Stepway",
+    "l": 4388,
+    "w": 1767,
+    "h": 1852
+  },
+  {
+    "id": 1095,
+    "name": "DS DS3",
+    "l": 3948,
+    "w": 1715,
+    "h": 1458
+  },
+  {
+    "id": 1096,
+    "name": "DS DS3 Cabrio",
+    "l": 3948,
+    "w": 1715,
+    "h": 1458
+  },
+  {
+    "id": 1097,
+    "name": "DS DS4",
+    "l": 4284,
+    "w": 1810,
+    "h": 1502
+  },
+  {
+    "id": 1098,
+    "name": "DS DS4 Crossback",
+    "l": 4284,
+    "w": 1810,
+    "h": 1535
+  },
+  {
+    "id": 1099,
+    "name": "DS DS5",
+    "l": 4530,
+    "w": 1871,
+    "h": 1505
+  },
+  {
+    "id": 1100,
+    "name": "Ferrari California T",
+    "l": 4570,
+    "w": 1910,
+    "h": 1322
+  },
+  {
+    "id": 1101,
+    "name": "Ferrari 458 Speciale",
+    "l": 4571,
+    "w": 1951,
+    "h": 1203
+  },
+  {
+    "id": 1102,
+    "name": "Ferrari 488 GTB",
+    "l": 4568,
+    "w": 1952,
+    "h": 1213
+  },
+  {
+    "id": 1103,
+    "name": "Ferrari 488 Spider",
+    "l": 4568,
+    "w": 1952,
+    "h": 1211
+  },
+  {
+    "id": 1104,
+    "name": "Ferrari F12berlinetta",
+    "l": 4618,
+    "w": 1942,
+    "h": 1273
+  },
+  {
+    "id": 1105,
+    "name": "Ferrari F12tdf",
+    "l": 4656,
+    "w": 1961,
+    "h": 1273
+  },
+  {
+    "id": 1106,
+    "name": "Ferrari GTC4Lusso",
+    "l": 4922,
+    "w": 1980,
+    "h": 1383
+  },
+  {
+    "id": 1107,
+    "name": "Ferrari LaFerrari",
+    "l": 4702,
+    "w": 1992,
+    "h": 1116
+  },
+  {
+    "id": 1108,
+    "name": "Fiat Panda",
+    "l": 3653,
+    "w": 1643,
+    "h": 1551
+  },
+  {
+    "id": 1109,
+    "name": "Fiat Panda 4x4",
+    "l": 3686,
+    "w": 1672,
+    "h": 1605
+  },
+  {
+    "id": 1110,
+    "name": "Fiat 500",
+    "l": 3571,
+    "w": 1627,
+    "h": 1488
+  },
+  {
+    "id": 1111,
+    "name": "Fiat 500L",
+    "l": 4147,
+    "w": 1784,
+    "h": 1665
+  },
+  {
+    "id": 1112,
+    "name": "Fiat 500X",
+    "l": 4248,
+    "w": 1796,
+    "h": 1600
+  },
+  {
+    "id": 1113,
+    "name": "Fiat Punto",
+    "l": 4065,
+    "w": 1687,
+    "h": 1490
+  },
+  {
+    "id": 1114,
+    "name": "Fiat 124 Spider",
+    "l": 4054,
+    "w": 1740,
+    "h": 1233
+  },
+  {
+    "id": 1115,
+    "name": "Fiat 500L Trekking",
+    "l": 4270,
+    "w": 1800,
+    "h": 1679
+  },
+  {
+    "id": 1116,
+    "name": "Fiat 500L Living",
+    "l": 4352,
+    "w": 1784,
+    "h": 1667
+  },
+  {
+    "id": 1117,
+    "name": "Fiat Tipo 5 portes",
+    "l": 4350,
+    "w": 1792,
+    "h": 1490
+  },
+  {
+    "id": 1118,
+    "name": "Fiat Tipo 4 portes",
+    "l": 4540,
+    "w": 1792,
+    "h": 1490
+  },
+  {
+    "id": 1119,
+    "name": "Fiat Tipo SW",
+    "l": 4570,
+    "w": 1792,
+    "h": 1500
+  },
+  {
+    "id": 1120,
+    "name": "Fiat Fullback 2Cab",
+    "l": 5285,
+    "w": 1785,
+    "h": 1775
+  },
+  {
+    "id": 1121,
+    "name": "Fiat Qubo",
+    "l": 3959,
+    "w": 1716,
+    "h": 1782
+  },
+  {
+    "id": 1122,
+    "name": "Fiat Doblò",
+    "l": 4406,
+    "w": 1832,
+    "h": 1895
+  },
+  {
+    "id": 1123,
+    "name": "Fiat Scudo Combi",
+    "l": 4805,
+    "w": 1895,
+    "h": 1980
+  },
+  {
+    "id": 1124,
+    "name": "Fiat Scudo Combi Long",
+    "l": 5135,
+    "w": 1895,
+    "h": 1980
+  },
+  {
+    "id": 1125,
+    "name": "Ford Ka+",
+    "l": 3929,
+    "w": 1695,
+    "h": 1524
+  },
+  {
+    "id": 1126,
+    "name": "Ford Fiesta",
+    "l": 3969,
+    "w": 1722,
+    "h": 1495
+  },
+  {
+    "id": 1127,
+    "name": "Ford B-MAX",
+    "l": 4077,
+    "w": 1751,
+    "h": 1604
+  },
+  {
+    "id": 1128,
+    "name": "Ford Focus",
+    "l": 4360,
+    "w": 1823,
+    "h": 1469
+  },
+  {
+    "id": 1129,
+    "name": "Ford Focus SportBreak",
+    "l": 4560,
+    "w": 1823,
+    "h": 1492
+  },
+  {
+    "id": 1130,
+    "name": "Ford EcoSport",
+    "l": 4017,
+    "w": 1765,
+    "h": 1650
+  },
+  {
+    "id": 1131,
+    "name": "Ford Kuga",
+    "l": 4524,
+    "w": 1838,
+    "h": 1702
+  },
+  {
+    "id": 1132,
+    "name": "Ford C-MAX",
+    "l": 4379,
+    "w": 1828,
+    "h": 1610
+  },
+  {
+    "id": 1133,
+    "name": "Ford Grand C-MAX",
+    "l": 4519,
+    "w": 1828,
+    "h": 1642
+  },
+  {
+    "id": 1134,
+    "name": "Ford S-MAX",
+    "l": 4796,
+    "w": 1916,
+    "h": 1655
+  },
+  {
+    "id": 1135,
+    "name": "Ford Mustang",
+    "l": 4783,
+    "w": 1915,
+    "h": 1382
+  },
+  {
+    "id": 1136,
+    "name": "Ford Mondeo",
+    "l": 4871,
+    "w": 1852,
+    "h": 1482
+  },
+  {
+    "id": 1137,
+    "name": "Ford Mondeo SportBreak",
+    "l": 4867,
+    "w": 1852,
+    "h": 1501
+  },
+  {
+    "id": 1138,
+    "name": "Ford Edge",
+    "l": 4808,
+    "w": 1928,
+    "h": 1692
+  },
+  {
+    "id": 1139,
+    "name": "Ford Galaxy",
+    "l": 4848,
+    "w": 1916,
+    "h": 1747
+  },
+  {
+    "id": 1140,
+    "name": "Ford Tourneo Courier",
+    "l": 4157,
+    "w": 1764,
+    "h": 1726
+  },
+  {
+    "id": 1141,
+    "name": "Ford Tourneo Connect",
+    "l": 4418,
+    "w": 1835,
+    "h": 1844
+  },
+  {
+    "id": 1142,
+    "name": "Ford Grand Tourneo Connect",
+    "l": 4818,
+    "w": 1835,
+    "h": 1828
+  },
+  {
+    "id": 1143,
+    "name": "Ford Tourneo Custom Court",
+    "l": 4972,
+    "w": 1986,
+    "h": 1972
+  },
+  {
+    "id": 1144,
+    "name": "Ford Tourneo Custom Long",
+    "l": 5339,
+    "w": 1986,
+    "h": 1976
+  },
+  {
+    "id": 1145,
+    "name": "Ford Ranger",
+    "l": 5362,
+    "w": 1860,
+    "h": 1815
+  },
+  {
+    "id": 1146,
+    "name": "Honda Jazz",
+    "l": 3995,
+    "w": 1694,
+    "h": 1525
+  },
+  {
+    "id": 1147,
+    "name": "Honda Civic",
+    "l": 4370,
+    "w": 1770,
+    "h": 1470
+  },
+  {
+    "id": 1148,
+    "name": "Honda Civic Tourer",
+    "l": 4590,
+    "w": 1770,
+    "h": 1480
+  },
+  {
+    "id": 1149,
+    "name": "Honda HR-V",
+    "l": 4294,
+    "w": 1772,
+    "h": 1605
+  },
+  {
+    "id": 1150,
+    "name": "Honda CR-V",
+    "l": 4605,
+    "w": 1820,
+    "h": 1685
+  },
+  {
+    "id": 1151,
+    "name": "Hyundai i10",
+    "l": 3665,
+    "w": 1660,
+    "h": 1500
+  },
+  {
+    "id": 1152,
+    "name": "Hyundai i20",
+    "l": 4035,
+    "w": 1734,
+    "h": 1474
+  },
+  {
+    "id": 1153,
+    "name": "Hyundai i20 Coupe",
+    "l": 4045,
+    "w": 1730,
+    "h": 1449
+  },
+  {
+    "id": 1154,
+    "name": "Hyundai i20 Active",
+    "l": 4065,
+    "w": 1760,
+    "h": 1529
+  },
+  {
+    "id": 1155,
+    "name": "Hyundai ix20",
+    "l": 4120,
+    "w": 1765,
+    "h": 1600
+  },
+  {
+    "id": 1156,
+    "name": "Hyundai i30",
+    "l": 4300,
+    "w": 1780,
+    "h": 1470
+  },
+  {
+    "id": 1157,
+    "name": "Hyundai i30 SW",
+    "l": 4485,
+    "w": 1780,
+    "h": 1500
+  },
+  {
+    "id": 1158,
+    "name": "Hyundai Veloster ",
+    "l": 4220,
+    "w": 1790,
+    "h": 1399
+  },
+  {
+    "id": 1159,
+    "name": "Hyundai IONIQ",
+    "l": 4470,
+    "w": 1780,
+    "h": 1450
+  },
+  {
+    "id": 1160,
+    "name": "Hyundai i40",
+    "l": 4745,
+    "w": 1815,
+    "h": 1470
+  },
+  {
+    "id": 1161,
+    "name": "Hyundai i40 SW",
+    "l": 4775,
+    "w": 1815,
+    "h": 1470
+  },
+  {
+    "id": 1162,
+    "name": "Hyundai Genesis",
+    "l": 4990,
+    "w": 1890,
+    "h": 1480
+  },
+  {
+    "id": 1163,
+    "name": "Hyundai Tucson",
+    "l": 4470,
+    "w": 1850,
+    "h": 1640
+  },
+  {
+    "id": 1164,
+    "name": "Hyundai Santa Fe",
+    "l": 4690,
+    "w": 1880,
+    "h": 1690
+  },
+  {
+    "id": 1165,
+    "name": "Hyundai Grand Santa Fe",
+    "l": 4915,
+    "w": 1885,
+    "h": 1700
+  },
+  {
+    "id": 1166,
+    "name": "Hyundai H-1 Travel",
+    "l": 5150,
+    "w": 1920,
+    "h": 1925
+  },
+  {
+    "id": 1167,
+    "name": "Infiniti Q30",
+    "l": 4425,
+    "w": 1805,
+    "h": 1495
+  },
+  {
+    "id": 1168,
+    "name": "Infiniti Q50",
+    "l": 4790,
+    "w": 1820,
+    "h": 1445
+  },
+  {
+    "id": 1169,
+    "name": "Infiniti Q70",
+    "l": 4980,
+    "w": 1845,
+    "h": 1493
+  },
+  {
+    "id": 1170,
+    "name": "Infiniti QX30",
+    "l": 4425,
+    "w": 1815,
+    "h": 1515
+  },
+  {
+    "id": 1171,
+    "name": "Infiniti QX50",
+    "l": 4635,
+    "w": 1800,
+    "h": 1575
+  },
+  {
+    "id": 1172,
+    "name": "Infiniti QX70",
+    "l": 4865,
+    "w": 1925,
+    "h": 1680
+  },
+  {
+    "id": 1173,
+    "name": "Jaguar F-TYPE Coupe",
+    "l": 4470,
+    "w": 1923,
+    "h": 1308
+  },
+  {
+    "id": 1174,
+    "name": "Jaguar F-TYPE Cabriolet",
+    "l": 4470,
+    "w": 1923,
+    "h": 1308
+  },
+  {
+    "id": 1175,
+    "name": "Jaguar XF",
+    "l": 4954,
+    "w": 1880,
+    "h": 1457
+  },
+  {
+    "id": 1176,
+    "name": "Jaguar XF Sportbrake",
+    "l": 4966,
+    "w": 1877,
+    "h": 1480
+  },
+  {
+    "id": 1177,
+    "name": "Jaguar XE",
+    "l": 4672,
+    "w": 1850,
+    "h": 1416
+  },
+  {
+    "id": 1178,
+    "name": "Jaguar XJ",
+    "l": 5130,
+    "w": 1899,
+    "h": 1460
+  },
+  {
+    "id": 1179,
+    "name": "Jaguar XJ long",
+    "l": 5255,
+    "w": 1899,
+    "h": 1460
+  },
+  {
+    "id": 1180,
+    "name": "Jaguar F-PACE",
+    "l": 4731,
+    "w": 1936,
+    "h": 1652
+  },
+  {
+    "id": 1181,
+    "name": "Jeep Renegade",
+    "l": 4255,
+    "w": 1805,
+    "h": 1697
+  },
+  {
+    "id": 1182,
+    "name": "Jeep Cherokee",
+    "l": 4623,
+    "w": 1859,
+    "h": 1669
+  },
+  {
+    "id": 1183,
+    "name": "Jeep Wrangler",
+    "l": 4223,
+    "w": 1873,
+    "h": 1825
+  },
+  {
+    "id": 1184,
+    "name": "Jeep Wrangler unlimited",
+    "l": 4751,
+    "w": 1877,
+    "h": 1825
+  },
+  {
+    "id": 1185,
+    "name": "Jeep Grand Cherokee",
+    "l": 4828,
+    "w": 1943,
+    "h": 1761
+  },
+  {
+    "id": 1186,
+    "name": "Kia Picanto",
+    "l": 3595,
+    "w": 1595,
+    "h": 1480
+  },
+  {
+    "id": 1187,
+    "name": "Kia Rio",
+    "l": 4050,
+    "w": 1720,
+    "h": 1455
+  },
+  {
+    "id": 1188,
+    "name": "Kia pro_cee'd",
+    "l": 4310,
+    "w": 1780,
+    "h": 1430
+  },
+  {
+    "id": 1189,
+    "name": "Kia cee'd",
+    "l": 4310,
+    "w": 1780,
+    "h": 1470
+  },
+  {
+    "id": 1190,
+    "name": "Kia cee'd Sportswagon",
+    "l": 4505,
+    "w": 1780,
+    "h": 1485
+  },
+  {
+    "id": 1191,
+    "name": "Kia Venga",
+    "l": 4068,
+    "w": 1765,
+    "h": 1600
+  },
+  {
+    "id": 1192,
+    "name": "Kia Soul",
+    "l": 4140,
+    "w": 1800,
+    "h": 1593
+  },
+  {
+    "id": 1193,
+    "name": "Kia Niro",
+    "l": 4355,
+    "w": 1805,
+    "h": 1545
+  },
+  {
+    "id": 1194,
+    "name": "Kia Sportage",
+    "l": 4480,
+    "w": 1855,
+    "h": 1645
+  },
+  {
+    "id": 1195,
+    "name": "Kia Carens",
+    "l": 4525,
+    "w": 1805,
+    "h": 1610
+  },
+  {
+    "id": 1196,
+    "name": "Kia Sorento",
+    "l": 4780,
+    "w": 1890,
+    "h": 1685
+  },
+  {
+    "id": 1197,
+    "name": "Kia Optima",
+    "l": 4855,
+    "w": 1860,
+    "h": 1465
+  },
+  {
+    "id": 1198,
+    "name": "Kia Optima Sportswagon",
+    "l": 4855,
+    "w": 1860,
+    "h": 1470
+  },
+  {
+    "id": 1199,
+    "name": "Lancia Ypsilon",
+    "l": 3837,
+    "w": 1676,
+    "h": 1518
+  },
+  {
+    "id": 1200,
+    "name": "Land Rover Discovery Sport",
+    "l": 4599,
+    "w": 2069,
+    "h": 1724
+  },
+  {
+    "id": 1201,
+    "name": "Land Rover Discovery",
+    "l": 4829,
+    "w": 2053,
+    "h": 1887
+  },
+  {
+    "id": 1202,
+    "name": "Land Rover Defender 90 SW",
+    "l": 4040,
+    "w": 1790,
+    "h": 2000
+  },
+  {
+    "id": 1203,
+    "name": "Land Rover Defender 110 SW",
+    "l": 4785,
+    "w": 1790,
+    "h": 2035
+  },
+  {
+    "id": 1204,
+    "name": "Range Rover Evoque",
+    "l": 4370,
+    "w": 1985,
+    "h": 1635
+  },
+  {
+    "id": 1205,
+    "name": "Range Rover Sport",
+    "l": 4850,
+    "w": 2073,
+    "h": 1780
+  },
+  {
+    "id": 1206,
+    "name": "Range Rover",
+    "l": 4999,
+    "w": 2073,
+    "h": 1835
+  },
+  {
+    "id": 1207,
+    "name": "Range Rover LWB",
+    "l": 5199,
+    "w": 2073,
+    "h": 1840
+  },
+  {
+    "id": 1208,
+    "name": "Lexus CT",
+    "l": 4350,
+    "w": 1765,
+    "h": 1455
+  },
+  {
+    "id": 1209,
+    "name": "Lexus IS",
+    "l": 4665,
+    "w": 1810,
+    "h": 1430
+  },
+  {
+    "id": 1210,
+    "name": "Lexus RC",
+    "l": 4695,
+    "w": 1840,
+    "h": 1395
+  },
+  {
+    "id": 1211,
+    "name": "Lexus NX",
+    "l": 4630,
+    "w": 1845,
+    "h": 1645
+  },
+  {
+    "id": 1212,
+    "name": "Lexus RX",
+    "l": 4890,
+    "w": 1895,
+    "h": 1685
+  },
+  {
+    "id": 1213,
+    "name": "Lexus GS",
+    "l": 4880,
+    "w": 1840,
+    "h": 1455
+  },
+  {
+    "id": 1214,
+    "name": "Lexus LS",
+    "l": 5090,
+    "w": 1875,
+    "h": 1840
+  },
+  {
+    "id": 1215,
+    "name": "Maserati Ghibli",
+    "l": 4971,
+    "w": 1945,
+    "h": 1461
+  },
+  {
+    "id": 1216,
+    "name": "Maserati Levante",
+    "l": 5003,
+    "w": 1968,
+    "h": 1679
+  },
+  {
+    "id": 1217,
+    "name": "Maserati Quattroporte",
+    "l": 5264,
+    "w": 1948,
+    "h": 1481
+  },
+  {
+    "id": 1218,
+    "name": "Maserati GranTurismo",
+    "l": 4881,
+    "w": 1915,
+    "h": 1353
+  },
+  {
+    "id": 1219,
+    "name": "Maserati GranCabrio",
+    "l": 4881,
+    "w": 1915,
+    "h": 1353
+  },
+  {
+    "id": 1220,
+    "name": "Mazda 2",
+    "l": 4060,
+    "w": 1695,
+    "h": 1495
+  },
+  {
+    "id": 1221,
+    "name": "Mazda 3",
+    "l": 4460,
+    "w": 1795,
+    "h": 1450
+  },
+  {
+    "id": 1222,
+    "name": "Mazda 3 Berline",
+    "l": 4585,
+    "w": 1795,
+    "h": 1452
+  },
+  {
+    "id": 1223,
+    "name": "Mazda 6",
+    "l": 4870,
+    "w": 1840,
+    "h": 1450
+  },
+  {
+    "id": 1224,
+    "name": "Mazda 6 Wagon",
+    "l": 4805,
+    "w": 1840,
+    "h": 1480
+  },
+  {
+    "id": 1225,
+    "name": "Mazda CX-3",
+    "l": 4270,
+    "w": 1765,
+    "h": 1535
+  },
+  {
+    "id": 1226,
+    "name": "Mazda CX-5",
+    "l": 4555,
+    "w": 1840,
+    "h": 1670
+  },
+  {
+    "id": 1227,
+    "name": "Mazda MX-5",
+    "l": 3915,
+    "w": 1735,
+    "h": 1230
+  },
+  {
+    "id": 1228,
+    "name": "Mercedes-Benz Classe A",
+    "l": 4299,
+    "w": 1780,
+    "h": 1433
+  },
+  {
+    "id": 1229,
+    "name": "Mercedes-Benz Classe B Sports Tourer",
+    "l": 4393,
+    "w": 1786,
+    "h": 1557
+  },
+  {
+    "id": 1230,
+    "name": "Mercedes-Benz Classe C",
+    "l": 4686,
+    "w": 1810,
+    "h": 1442
+  },
+  {
+    "id": 1231,
+    "name": "Mercedes-Benz Classe C Estate",
+    "l": 4702,
+    "w": 1810,
+    "h": 1457
+  },
+  {
+    "id": 1232,
+    "name": "Mercedes-Benz Classe C Coupé",
+    "l": 4686,
+    "w": 1810,
+    "h": 1406
+  },
+  {
+    "id": 1233,
+    "name": "Mercedes-Benz Classe E",
+    "l": 4923,
+    "w": 1852,
+    "h": 1468
+  },
+  {
+    "id": 1234,
+    "name": "Mercedes-Benz Classe E Estate",
+    "l": 4933,
+    "w": 1852,
+    "h": 1475
+  },
+  {
+    "id": 1235,
+    "name": "Mercedes-Benz Classe S",
+    "l": 5116,
+    "w": 1899,
+    "h": 1496
+  },
+  {
+    "id": 1236,
+    "name": "Mercedes-Benz Classe S Long",
+    "l": 5246,
+    "w": 1899,
+    "h": 1494
+  },
+  {
+    "id": 1237,
+    "name": "Mercedes-Benz Classe S Coupé",
+    "l": 5027,
+    "w": 1899,
+    "h": 1411
+  },
+  {
+    "id": 1238,
+    "name": "Mercedes-Benz CLA Coupé",
+    "l": 4640,
+    "w": 1777,
+    "h": 1432
+  },
+  {
+    "id": 1239,
+    "name": "Mercedes-Benz CLA Shooting Brake",
+    "l": 4640,
+    "w": 1777,
+    "h": 1435
+  },
+  {
+    "id": 1240,
+    "name": "Mercedes-Benz CLS Coupé",
+    "l": 4937,
+    "w": 1881,
+    "h": 1418
+  },
+  {
+    "id": 1241,
+    "name": "Mercedes-Benz GLA",
+    "l": 4417,
+    "w": 1804,
+    "h": 1494
+  },
+  {
+    "id": 1242,
+    "name": "Mercedes-Benz GLC SUV",
+    "l": 4656,
+    "w": 1890,
+    "h": 1639
+  },
+  {
+    "id": 1243,
+    "name": "Mercedes-Benz GLC Coupé",
+    "l": 4732,
+    "w": 1890,
+    "h": 1602
+  },
+  {
+    "id": 1244,
+    "name": "Mercedes-Benz GLE SUV",
+    "l": 4819,
+    "w": 1935,
+    "h": 1796
+  },
+  {
+    "id": 1245,
+    "name": "Mercedes-Benz GLE Coupé",
+    "l": 4900,
+    "w": 2003,
+    "h": 1731
+  },
+  {
+    "id": 1246,
+    "name": "Mercedes-Benz GLS",
+    "l": 5130,
+    "w": 1934,
+    "h": 1850
+  },
+  {
+    "id": 1247,
+    "name": "Mercedes-Benz Classe G",
+    "l": 4662,
+    "w": 1760,
+    "h": 1951
+  },
+  {
+    "id": 1248,
+    "name": "Mercedes-Benz SLC",
+    "l": 4133,
+    "w": 1810,
+    "h": 1301
+  },
+  {
+    "id": 1249,
+    "name": "Mercedes-Benz SL",
+    "l": 4631,
+    "w": 1877,
+    "h": 1315
+  },
+  {
+    "id": 1250,
+    "name": "Mercedes-Benz Mercedes-AMG GT",
+    "l": 4546,
+    "w": 1939,
+    "h": 1288
+  },
+  {
+    "id": 1251,
+    "name": "Mercedes-Benz Classe V Court",
+    "l": 4895,
+    "w": 1928,
+    "h": 1880
+  },
+  {
+    "id": 1252,
+    "name": "Mercedes-Benz Classe V Long",
+    "l": 5140,
+    "w": 1928,
+    "h": 1880
+  },
+  {
+    "id": 1253,
+    "name": "Mercedes-Benz Classe V Extralong",
+    "l": 5370,
+    "w": 1928,
+    "h": 1880
+  },
+  {
+    "id": 1254,
+    "name": "MINI 3 portes",
+    "l": 3821,
+    "w": 1727,
+    "h": 1414
+  },
+  {
+    "id": 1255,
+    "name": "MINI 5 portes",
+    "l": 3982,
+    "w": 1727,
+    "h": 1425
+  },
+  {
+    "id": 1256,
+    "name": "MINI Cabrio",
+    "l": 3821,
+    "w": 1727,
+    "h": 1415
+  },
+  {
+    "id": 1257,
+    "name": "MINI Countryman",
+    "l": 4097,
+    "w": 1789,
+    "h": 1561
+  },
+  {
+    "id": 1258,
+    "name": "MINI Paceman",
+    "l": 4109,
+    "w": 1786,
+    "h": 1518
+  },
+  {
+    "id": 1259,
+    "name": "MINI Clubman",
+    "l": 4253,
+    "w": 1800,
+    "h": 1441
+  },
+  {
+    "id": 1260,
+    "name": "Mitsubishi i-MiEV",
+    "l": 3475,
+    "w": 1475,
+    "h": 1610
+  },
+  {
+    "id": 1261,
+    "name": "Mitsubishi Space Star",
+    "l": 3795,
+    "w": 1665,
+    "h": 1510
+  },
+  {
+    "id": 1262,
+    "name": "Mitsubishi ASX",
+    "l": 4295,
+    "w": 1770,
+    "h": 1625
+  },
+  {
+    "id": 1263,
+    "name": "Mitsubishi Outlander",
+    "l": 4695,
+    "w": 1810,
+    "h": 1680
+  },
+  {
+    "id": 1264,
+    "name": "Mitsubishi Pajero 3 portes",
+    "l": 4385,
+    "w": 1875,
+    "h": 1880
+  },
+  {
+    "id": 1265,
+    "name": "Mitsubishi Pajero 5 portes",
+    "l": 4900,
+    "w": 1875,
+    "h": 1900
+  },
+  {
+    "id": 1266,
+    "name": "Mitsubishi L200",
+    "l": 5205,
+    "w": 1785,
+    "h": 1775
+  },
+  {
+    "id": 1267,
+    "name": "Nissan Micra",
+    "l": 3825,
+    "w": 1665,
+    "h": 1520
+  },
+  {
+    "id": 1268,
+    "name": "Nissan Note",
+    "l": 4100,
+    "w": 1695,
+    "h": 1530
+  },
+  {
+    "id": 1269,
+    "name": "Nissan Juke",
+    "l": 4135,
+    "w": 1765,
+    "h": 1565
+  },
+  {
+    "id": 1270,
+    "name": "Nissan Leaf",
+    "l": 4445,
+    "w": 1770,
+    "h": 1550
+  },
+  {
+    "id": 1271,
+    "name": "Nissan Pulsar",
+    "l": 4385,
+    "w": 1768,
+    "h": 1520
+  },
+  {
+    "id": 1272,
+    "name": "Nissan Qashqai",
+    "l": 4379,
+    "w": 1800,
+    "h": 1590
+  },
+  {
+    "id": 1273,
+    "name": "Nissan Evalia",
+    "l": 4400,
+    "w": 1695,
+    "h": 1860
+  },
+  {
+    "id": 1274,
+    "name": "Nissan X-Trail",
+    "l": 4643,
+    "w": 1820,
+    "h": 1695
+  },
+  {
+    "id": 1275,
+    "name": "Nissan Murano",
+    "l": 4860,
+    "w": 1885,
+    "h": 1720
+  },
+  {
+    "id": 1276,
+    "name": "Nissan 370Z",
+    "l": 4250,
+    "w": 1845,
+    "h": 1315
+  },
+  {
+    "id": 1277,
+    "name": "Nissan GT-R",
+    "l": 4670,
+    "w": 1895,
+    "h": 1370
+  },
+  {
+    "id": 1278,
+    "name": "Nissan NP300 Navara",
+    "l": 5330,
+    "w": 1850,
+    "h": 1840
+  },
+  {
+    "id": 1279,
+    "name": "Opel Karl",
+    "l": 3675,
+    "w": 1604,
+    "h": 1476
+  },
+  {
+    "id": 1280,
+    "name": "Opel ADAM",
+    "l": 3698,
+    "w": 1720,
+    "h": 1484
+  },
+  {
+    "id": 1281,
+    "name": "Opel Corsa 3p",
+    "l": 4021,
+    "w": 1736,
+    "h": 1479
+  },
+  {
+    "id": 1282,
+    "name": "Opel Corsa 5p",
+    "l": 4021,
+    "w": 1746,
+    "h": 1481
+  },
+  {
+    "id": 1283,
+    "name": "Opel Meriva",
+    "l": 4288,
+    "w": 1812,
+    "h": 1615
+  },
+  {
+    "id": 1284,
+    "name": "Opel Astra",
+    "l": 4370,
+    "w": 1809,
+    "h": 1485
+  },
+  {
+    "id": 1285,
+    "name": "Opel Astra Sports Tourer",
+    "l": 4702,
+    "w": 1809,
+    "h": 1499
+  },
+  {
+    "id": 1286,
+    "name": "Opel Astra Berline",
+    "l": 4658,
+    "w": 1814,
+    "h": 1500
+  },
+  {
+    "id": 1287,
+    "name": "Opel Astra GTC",
+    "l": 4466,
+    "w": 1840,
+    "h": 1482
+  },
+  {
+    "id": 1288,
+    "name": "Opel Mokka X",
+    "l": 4275,
+    "w": 1781,
+    "h": 1658
+  },
+  {
+    "id": 1289,
+    "name": "Opel Ampera",
+    "l": 4498,
+    "w": 1787,
+    "h": 1439
+  },
+  {
+    "id": 1290,
+    "name": "Opel Cascada",
+    "l": 4696,
+    "w": 1839,
+    "h": 1443
+  },
+  {
+    "id": 1291,
+    "name": "Opel Insignia",
+    "l": 4842,
+    "w": 1856,
+    "h": 1498
+  },
+  {
+    "id": 1292,
+    "name": "Opel Insignia Sports Tourer",
+    "l": 4913,
+    "w": 1856,
+    "h": 1513
+  },
+  {
+    "id": 1293,
+    "name": "Opel Zafira",
+    "l": 4666,
+    "w": 1928,
+    "h": 1660
+  },
+  {
+    "id": 1294,
+    "name": "Opel Vivaro Combi",
+    "l": 4999,
+    "w": 1956,
+    "h": 1971
+  },
+  {
+    "id": 1295,
+    "name": "Opel Vivaro Combi Long",
+    "l": 5399,
+    "w": 1956,
+    "h": 1971
+  },
+  {
+    "id": 1296,
+    "name": "Peugeot iOn",
+    "l": 3475,
+    "w": 1475,
+    "h": 1608
+  },
+  {
+    "id": 1297,
+    "name": "Peugeot 108",
+    "l": 3470,
+    "w": 1620,
+    "h": 1450
+  },
+  {
+    "id": 1299,
+    "name": "Peugeot 2008",
+    "l": 4159,
+    "w": 1739,
+    "h": 1556
+  },
+  {
+    "id": 1300,
+    "name": "Peugeot RCZ",
+    "l": 4287,
+    "w": 1845,
+    "h": 1359
+  },
+  {
+    "id": 1301,
+    "name": "Peugeot 308",
+    "l": 4253,
+    "w": 1804,
+    "h": 1457
+  },
+  {
+    "id": 1302,
+    "name": "Peugeot 308 SW",
+    "l": 4585,
+    "w": 1804,
+    "h": 1471
+  },
+  {
+    "id": 1303,
+    "name": "Peugeot 3008",
+    "l": 4447,
+    "w": 1841,
+    "h": 1624
+  },
+  {
+    "id": 1304,
+    "name": "Peugeot 5008",
+    "l": 4529,
+    "w": 1837,
+    "h": 1639
+  },
+  {
+    "id": 1305,
+    "name": "Peugeot 508",
+    "l": 4830,
+    "w": 1828,
+    "h": 1456
+  },
+  {
+    "id": 1306,
+    "name": "Peugeot 508 SW",
+    "l": 4829,
+    "w": 1828,
+    "h": 1476
+  },
+  {
+    "id": 1307,
+    "name": "Peugeot 508 RXH",
+    "l": 4828,
+    "w": 1864,
+    "h": 1525
+  },
+  {
+    "id": 1308,
+    "name": "Peugeot Partner Tepee",
+    "l": 4380,
+    "w": 1810,
+    "h": 1862
+  },
+  {
+    "id": 1309,
+    "name": "Peugeot Traveller Compact",
+    "l": 4606,
+    "w": 1920,
+    "h": 1905
+  },
+  {
+    "id": 1310,
+    "name": "Peugeot Traveller Standard",
+    "l": 4956,
+    "w": 1920,
+    "h": 1890
+  },
+  {
+    "id": 1311,
+    "name": "Peugeot Traveller Long",
+    "l": 5308,
+    "w": 1920,
+    "h": 1890
+  },
+  {
+    "id": 1312,
+    "name": "Porsche 718 Boxster",
+    "l": 4379,
+    "w": 1801,
+    "h": 1281
+  },
+  {
+    "id": 1313,
+    "name": "Porsche 718 Cayman",
+    "l": 4379,
+    "w": 1801,
+    "h": 1295
+  },
+  {
+    "id": 1314,
+    "name": "Porsche 911 Carrera",
+    "l": 4499,
+    "w": 1808,
+    "h": 1294
+  },
+  {
+    "id": 1315,
+    "name": "Porsche 911 Targa 4",
+    "l": 4499,
+    "w": 1852,
+    "h": 1288
+  },
+  {
+    "id": 1316,
+    "name": "Porsche 911 Turbo",
+    "l": 4507,
+    "w": 1880,
+    "h": 1297
+  },
+  {
+    "id": 1317,
+    "name": "Porsche Panamera",
+    "l": 5049,
+    "w": 1937,
+    "h": 1427
+  },
+  {
+    "id": 1318,
+    "name": "Porsche Panamera Executive",
+    "l": 5165,
+    "w": 1931,
+    "h": 1425
+  },
+  {
+    "id": 1319,
+    "name": "Porsche 918 Spyder",
+    "l": 4643,
+    "w": 1940,
+    "h": 1167
+  },
+  {
+    "id": 1320,
+    "name": "Porsche Macan",
+    "l": 4681,
+    "w": 1923,
+    "h": 1624
+  },
+  {
+    "id": 1321,
+    "name": "Porsche Cayenne",
+    "l": 4855,
+    "w": 1939,
+    "h": 1705
+  },
+  {
+    "id": 1322,
+    "name": "Renault Twizy",
+    "l": 2337,
+    "w": 1234,
+    "h": 1454
+  },
+  {
+    "id": 1323,
+    "name": "Renault Twingo",
+    "l": 3595,
+    "w": 1654,
+    "h": 1554
+  },
+  {
+    "id": 1324,
+    "name": "Renault Zoe",
+    "l": 4084,
+    "w": 1730,
+    "h": 1562
+  },
+  {
+    "id": 1326,
+    "name": "Renault Clio Estate",
+    "l": 4267,
+    "w": 1732,
+    "h": 1475
+  },
+  {
+    "id": 1327,
+    "name": "Renault Captur",
+    "l": 4122,
+    "w": 1770,
+    "h": 1573
+  },
+  {
+    "id": 1328,
+    "name": "Renault Mégane",
+    "l": 4359,
+    "w": 1814,
+    "h": 1447
+  },
+  {
+    "id": 1329,
+    "name": "Renault Mégane Coupé",
+    "l": 4312,
+    "w": 1804,
+    "h": 1423
+  },
+  {
+    "id": 1330,
+    "name": "Renault Mégane Sport Tourer",
+    "l": 4626,
+    "w": 1814,
+    "h": 1441
+  },
+  {
+    "id": 1331,
+    "name": "Renault Mégane Coupé Cabriolet",
+    "l": 4485,
+    "w": 1810,
+    "h": 1434
+  },
+  {
+    "id": 1332,
+    "name": "Renault Scénic",
+    "l": 4406,
+    "w": 1865,
+    "h": 1653
+  },
+  {
+    "id": 1333,
+    "name": "Renault Scénic Xmod",
+    "l": 4372,
+    "w": 1845,
+    "h": 1656
+  },
+  {
+    "id": 1334,
+    "name": "Renault Grand Scénic",
+    "l": 4573,
+    "w": 1845,
+    "h": 1671
+  },
+  {
+    "id": 1335,
+    "name": "Renault Fluence",
+    "l": 4622,
+    "w": 1809,
+    "h": 1479
+  },
+  {
+    "id": 1336,
+    "name": "Renault Kadjar",
+    "l": 4445,
+    "w": 1840,
+    "h": 1609
+  },
+  {
+    "id": 1337,
+    "name": "Renault Espace",
+    "l": 4857,
+    "w": 1888,
+    "h": 1675
+  },
+  {
+    "id": 1338,
+    "name": "Renault Talisman",
+    "l": 4849,
+    "w": 1868,
+    "h": 1463
+  },
+  {
+    "id": 1339,
+    "name": "Renault Talisman Sport Tourer",
+    "l": 4849,
+    "w": 1868,
+    "h": 1456
+  },
+  {
+    "id": 1340,
+    "name": "Renault Kangoo",
+    "l": 4282,
+    "w": 1829,
+    "h": 1839
+  },
+  {
+    "id": 1341,
+    "name": "Renault Grand Kangoo",
+    "l": 4666,
+    "w": 1829,
+    "h": 1802
+  },
+  {
+    "id": 1342,
+    "name": "Renault Trafic Combi",
+    "l": 4999,
+    "w": 1956,
+    "h": 1971
+  },
+  {
+    "id": 1343,
+    "name": "Renault Grand Trafic Combi",
+    "l": 5399,
+    "w": 1956,
+    "h": 1971
+  },
+  {
+    "id": 1344,
+    "name": "Seat Mii",
+    "l": 3557,
+    "w": 1641,
+    "h": 1478
+  },
+  {
+    "id": 1345,
+    "name": "Seat Ibiza SC",
+    "l": 4043,
+    "w": 1693,
+    "h": 1428
+  },
+  {
+    "id": 1346,
+    "name": "Seat Ibiza 5p",
+    "l": 4061,
+    "w": 1693,
+    "h": 1445
+  },
+  {
+    "id": 1347,
+    "name": "Seat Ibiza ST",
+    "l": 4236,
+    "w": 1693,
+    "h": 1445
+  },
+  {
+    "id": 1348,
+    "name": "Seat León SC",
+    "l": 4228,
+    "w": 1810,
+    "h": 1446
+  },
+  {
+    "id": 1349,
+    "name": "Seat León 5p",
+    "l": 4263,
+    "w": 1816,
+    "h": 1459
+  },
+  {
+    "id": 1350,
+    "name": "Seat León ST",
+    "l": 4535,
+    "w": 1816,
+    "h": 1454
+  },
+  {
+    "id": 1351,
+    "name": "Seat Toledo",
+    "l": 4482,
+    "w": 1703,
+    "h": 1461
+  },
+  {
+    "id": 1352,
+    "name": "Seat Ateca",
+    "l": 4363,
+    "w": 1841,
+    "h": 1601
+  },
+  {
+    "id": 1353,
+    "name": "Seat Alhambra",
+    "l": 4854,
+    "w": 1904,
+    "h": 1740
+  },
+  {
+    "id": 1354,
+    "name": "Škoda Citigo",
+    "l": 3563,
+    "w": 1645,
+    "h": 1478
+  },
+  {
+    "id": 1355,
+    "name": "Škoda Fabia",
+    "l": 3992,
+    "w": 1732,
+    "h": 1452
+  },
+  {
+    "id": 1356,
+    "name": "Škoda Fabia Combi",
+    "l": 4257,
+    "w": 1732,
+    "h": 1467
+  },
+  {
+    "id": 1357,
+    "name": "Škoda Yeti",
+    "l": 4223,
+    "w": 1793,
+    "h": 1691
+  },
+  {
+    "id": 1358,
+    "name": "Škoda Spaceback",
+    "l": 4304,
+    "w": 1706,
+    "h": 1459
+  },
+  {
+    "id": 1359,
+    "name": "Škoda Rapid",
+    "l": 4483,
+    "w": 1706,
+    "h": 1461
+  },
+  {
+    "id": 1360,
+    "name": "Škoda Scout",
+    "l": 4685,
+    "w": 1814,
+    "h": 1531
+  },
+  {
+    "id": 1361,
+    "name": "Škoda Kodiaq",
+    "l": 4697,
+    "w": 1882,
+    "h": 1676
+  },
+  {
+    "id": 1362,
+    "name": "Škoda Octavia",
+    "l": 4659,
+    "w": 1814,
+    "h": 1460
+  },
+  {
+    "id": 1363,
+    "name": "Škoda Octavia Combi",
+    "l": 4659,
+    "w": 1814,
+    "h": 1465
+  },
+  {
+    "id": 1364,
+    "name": "Škoda Superb",
+    "l": 4861,
+    "w": 1864,
+    "h": 1468
+  },
+  {
+    "id": 1365,
+    "name": "Škoda Superb Combi",
+    "l": 4856,
+    "w": 1864,
+    "h": 1477
+  },
+  {
+    "id": 1366,
+    "name": "Smart fortwo",
+    "l": 2695,
+    "w": 1663,
+    "h": 1555
+  },
+  {
+    "id": 1367,
+    "name": "Smart fortwo cabrio",
+    "l": 2695,
+    "w": 1663,
+    "h": 1552
+  },
+  {
+    "id": 1368,
+    "name": "Smart forfour",
+    "l": 3495,
+    "w": 1665,
+    "h": 1554
+  },
+  {
+    "id": 1369,
+    "name": "SsangYong Tivoli",
+    "l": 4202,
+    "w": 1798,
+    "h": 1600
+  },
+  {
+    "id": 1370,
+    "name": "SsangYong XLV",
+    "l": 4440,
+    "w": 1798,
+    "h": 1635
+  },
+  {
+    "id": 1371,
+    "name": "SsangYong Korando",
+    "l": 4410,
+    "w": 1830,
+    "h": 1675
+  },
+  {
+    "id": 1372,
+    "name": "SsangYong Rexton W",
+    "l": 4755,
+    "w": 1900,
+    "h": 1840
+  },
+  {
+    "id": 1373,
+    "name": "SsangYong Rodius",
+    "l": 5130,
+    "w": 1915,
+    "h": 1850
+  },
+  {
+    "id": 1374,
+    "name": "SsangYong Actyon Sports",
+    "l": 4990,
+    "w": 1910,
+    "h": 1790
+  },
+  {
+    "id": 1375,
+    "name": "Subaru BRZ",
+    "l": 4240,
+    "w": 1775,
+    "h": 1285
+  },
+  {
+    "id": 1376,
+    "name": "Subaru WRX STI",
+    "l": 4595,
+    "w": 1795,
+    "h": 1475
+  },
+  {
+    "id": 1377,
+    "name": "Subaru XV",
+    "l": 4450,
+    "w": 1780,
+    "h": 1570
+  },
+  {
+    "id": 1378,
+    "name": "Subaru Forester",
+    "l": 4595,
+    "w": 1795,
+    "h": 1735
+  },
+  {
+    "id": 1379,
+    "name": "Subaru Levorg",
+    "l": 4690,
+    "w": 1780,
+    "h": 1490
+  },
+  {
+    "id": 1380,
+    "name": "Subaru Outback",
+    "l": 4815,
+    "w": 1840,
+    "h": 1605
+  },
+  {
+    "id": 1381,
+    "name": "Suzuki Celerio",
+    "l": 3600,
+    "w": 1600,
+    "h": 1540
+  },
+  {
+    "id": 1382,
+    "name": "Suzuki Jimny",
+    "l": 3695,
+    "w": 1600,
+    "h": 1705
+  },
+  {
+    "id": 1383,
+    "name": "Suzuki Swift",
+    "l": 3850,
+    "w": 1695,
+    "h": 1510
+  },
+  {
+    "id": 1384,
+    "name": "Suzuki Baleno",
+    "l": 3995,
+    "w": 1745,
+    "h": 1470
+  },
+  {
+    "id": 1385,
+    "name": "Suzuki SX4 S-Cross",
+    "l": 4300,
+    "w": 1765,
+    "h": 1575
+  },
+  {
+    "id": 1386,
+    "name": "Suzuki Vitara",
+    "l": 4175,
+    "w": 1775,
+    "h": 1610
+  },
+  {
+    "id": 1387,
+    "name": "Suzuki Grand Vitara",
+    "l": 4500,
+    "w": 1810,
+    "h": 1695
+  },
+  {
+    "id": 1388,
+    "name": "Tesla Model S",
+    "l": 4970,
+    "w": 1964,
+    "h": 1445
+  },
+  {
+    "id": 1389,
+    "name": "Tesla Model X",
+    "l": 5037,
+    "w": 2070,
+    "h": 1626
+  },
+  {
+    "id": 1390,
+    "name": "Toyota AYGO",
+    "l": 3455,
+    "w": 1615,
+    "h": 1460
+  },
+  {
+    "id": 1391,
+    "name": "Toyota Yaris",
+    "l": 3950,
+    "w": 1695,
+    "h": 1510
+  },
+  {
+    "id": 1392,
+    "name": "Toyota Auris",
+    "l": 4330,
+    "w": 1760,
+    "h": 1475
+  },
+  {
+    "id": 1393,
+    "name": "Toyota Auris Touring Sports",
+    "l": 4595,
+    "w": 1760,
+    "h": 1485
+  },
+  {
+    "id": 1394,
+    "name": "Toyota GT86",
+    "l": 4240,
+    "w": 1775,
+    "h": 1285
+  },
+  {
+    "id": 1395,
+    "name": "Toyota Prius",
+    "l": 4540,
+    "w": 1760,
+    "h": 1470
+  },
+  {
+    "id": 1396,
+    "name": "Toyota Prius+",
+    "l": 4645,
+    "w": 1775,
+    "h": 1575
+  },
+  {
+    "id": 1397,
+    "name": "Toyota Verso",
+    "l": 4460,
+    "w": 1790,
+    "h": 1620
+  },
+  {
+    "id": 1398,
+    "name": "Toyota Avensis",
+    "l": 4750,
+    "w": 1810,
+    "h": 1480
+  },
+  {
+    "id": 1399,
+    "name": "Toyota Avensis Touring Sports",
+    "l": 4820,
+    "w": 1810,
+    "h": 1480
+  },
+  {
+    "id": 1400,
+    "name": "Toyota RAV4",
+    "l": 4605,
+    "w": 1845,
+    "h": 1675
+  },
+  {
+    "id": 1401,
+    "name": "Toyota Land Cruiser 3 portes",
+    "l": 4505,
+    "w": 1885,
+    "h": 1830
+  },
+  {
+    "id": 1402,
+    "name": "Toyota Land Cruiser 5 portes",
+    "l": 4780,
+    "w": 1885,
+    "h": 1845
+  },
+  {
+    "id": 1403,
+    "name": "Toyota Hilux 2Cab",
+    "l": 5330,
+    "w": 1855,
+    "h": 1815
+  },
+  {
+    "id": 1404,
+    "name": "Toyota Proace Court",
+    "l": 4813,
+    "w": 1895,
+    "h": 1980
+  },
+  {
+    "id": 1405,
+    "name": "Toyota Proace Long",
+    "l": 5143,
+    "w": 1895,
+    "h": 1980
+  },
+  {
+    "id": 1406,
+    "name": "Volkswagen up!",
+    "l": 3600,
+    "w": 1645,
+    "h": 1504
+  },
+  {
+    "id": 1407,
+    "name": "Volkswagen Polo",
+    "l": 3972,
+    "w": 1682,
+    "h": 1462
+  },
+  {
+    "id": 1408,
+    "name": "Volkswagen Golf",
+    "l": 4255,
+    "w": 1790,
+    "h": 1452
+  },
+  {
+    "id": 1409,
+    "name": "Volkswagen Golf GTI",
+    "l": 4268,
+    "w": 1790,
+    "h": 1442
+  },
+  {
+    "id": 1410,
+    "name": "Volkswagen Golf Cabriolet",
+    "l": 4246,
+    "w": 1782,
+    "h": 1423
+  },
+  {
+    "id": 1411,
+    "name": "Volkswagen Golf SW",
+    "l": 4562,
+    "w": 1799,
+    "h": 1481
+  },
+  {
+    "id": 1412,
+    "name": "Volkswagen Golf Alltrack",
+    "l": 4562,
+    "w": 1799,
+    "h": 1515
+  },
+  {
+    "id": 1413,
+    "name": "Volkswagen Golf Sportsvan",
+    "l": 4338,
+    "w": 1807,
+    "h": 1578
+  },
+  {
+    "id": 1414,
+    "name": "Volkswagen Coccinelle",
+    "l": 4288,
+    "w": 1825,
+    "h": 1488
+  },
+  {
+    "id": 1415,
+    "name": "Volkswagen Coccinelle Cabriolet",
+    "l": 4288,
+    "w": 1825,
+    "h": 1490
+  },
+  {
+    "id": 1416,
+    "name": "Volkswagen XL1",
+    "l": 3888,
+    "w": 1655,
+    "h": 1153
+  },
+  {
+    "id": 1417,
+    "name": "Volkswagen Scirocco",
+    "l": 4248,
+    "w": 1820,
+    "h": 1398
+  },
+  {
+    "id": 1418,
+    "name": "Volkswagen Tiguan",
+    "l": 4486,
+    "w": 1839,
+    "h": 1657
+  },
+  {
+    "id": 1419,
+    "name": "Volkswagen Touran",
+    "l": 4527,
+    "w": 1829,
+    "h": 1659
+  },
+  {
+    "id": 1420,
+    "name": "Volkswagen Sharan",
+    "l": 4854,
+    "w": 1904,
+    "h": 1720
+  },
+  {
+    "id": 1421,
+    "name": "Volkswagen Touareg",
+    "l": 4801,
+    "w": 1940,
+    "h": 1709
+  },
+  {
+    "id": 1422,
+    "name": "Volkswagen Jetta",
+    "l": 4659,
+    "w": 1778,
+    "h": 1482
+  },
+  {
+    "id": 1423,
+    "name": "Volkswagen Passat",
+    "l": 4767,
+    "w": 1832,
+    "h": 1456
+  },
+  {
+    "id": 1424,
+    "name": "Volkswagen Passat SW",
+    "l": 4767,
+    "w": 1832,
+    "h": 1477
+  },
+  {
+    "id": 1425,
+    "name": "Volkswagen Passat Alltrack",
+    "l": 4777,
+    "w": 1832,
+    "h": 1506
+  },
+  {
+    "id": 1426,
+    "name": "Volkswagen CC",
+    "l": 4802,
+    "w": 1855,
+    "h": 1417
+  },
+  {
+    "id": 1427,
+    "name": "Volkswagen Amarok",
+    "l": 5254,
+    "w": 1954,
+    "h": 1834
+  },
+  {
+    "id": 1428,
+    "name": "Volkswagen Caddy",
+    "l": 4408,
+    "w": 1793,
+    "h": 1822
+  },
+  {
+    "id": 1429,
+    "name": "Volkswagen Caddy Maxi",
+    "l": 4878,
+    "w": 1793,
+    "h": 1831
+  },
+  {
+    "id": 1430,
+    "name": "Volkswagen T6 Multivan",
+    "l": 4904,
+    "w": 1904,
+    "h": 1970
+  },
+  {
+    "id": 1431,
+    "name": "Volkswagen T6 California",
+    "l": 4904,
+    "w": 1904,
+    "h": 1970
+  },
+  {
+    "id": 1432,
+    "name": "Volkswagen T6 Caravelle Court",
+    "l": 4904,
+    "w": 1904,
+    "h": 1990
+  },
+  {
+    "id": 1433,
+    "name": "Volkswagen T6 Caravelle Long",
+    "l": 5304,
+    "w": 1904,
+    "h": 1990
+  },
+  {
+    "id": 1434,
+    "name": "Volvo V40",
+    "l": 4369,
+    "w": 1802,
+    "h": 1420
+  },
+  {
+    "id": 1435,
+    "name": "Volvo V40 Cross Country",
+    "l": 4370,
+    "w": 1802,
+    "h": 1458
+  },
+  {
+    "id": 1436,
+    "name": "Volvo V60",
+    "l": 4628,
+    "w": 1865,
+    "h": 1484
+  },
+  {
+    "id": 1437,
+    "name": "Volvo V60 Cross Country",
+    "l": 4638,
+    "w": 1899,
+    "h": 1545
+  },
+  {
+    "id": 1438,
+    "name": "Volvo S60",
+    "l": 4628,
+    "w": 1865,
+    "h": 1484
+  },
+  {
+    "id": 1439,
+    "name": "Volvo S90",
+    "l": 4963,
+    "w": 1895,
+    "h": 1443
+  },
+  {
+    "id": 1440,
+    "name": "Volvo V90",
+    "l": 4963,
+    "w": 1895,
+    "h": 1475
+  },
+  {
+    "id": 1441,
+    "name": "Volvo XC60",
+    "l": 4627,
+    "w": 1891,
+    "h": 1713
+  },
+  {
+    "id": 1442,
+    "name": "Volvo XC90",
+    "l": 4950,
+    "w": 2008,
+    "h": 1776
+  },
+  {
+    "id": 1443,
+    "name": "Étoile de la Mort",
+    "type": "spacecraft",
+    "l": 120000000,
+    "w": 120000000,
+    "h": 120000000
+  }
+]

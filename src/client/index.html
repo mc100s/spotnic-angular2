@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <base href="<%= APP_BASE %>">
   <meta charset="utf-8">
@@ -7,15 +7,30 @@
   <title><%= APP_TITLE %></title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="assets/favicon/favicon-<%= ENV_CONFIG.ENV %>.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" href="img/spotnic-logo-square.png" />
 
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"> -->
   <!-- inject:css -->
   <!-- endinject -->
 </head>
 <body>
 
-  <sd-app>Loading...</sd-app>
+  <sd-app>
+    <div class='pm-loader'>
+      <div class="pm-loader-container">
+        <div class="pm-loader-text">
+          Chargement
+        </div>
 
+        <div class='pm-loader-atoms'>
+          <div class='pm-loader-center-atom'></div>
+          <div class='pm-loader-orbit-1'><div class='pm-loader-atom-1'></div></div>
+        </div>
+      </div>
+    </div>
+  </sd-app>
+
+  
   <script>
   // Fixes undefined module function in SystemJS bundle
   function module() {}
@@ -28,18 +43,37 @@
   <script src="<%= APP_BASE %>app/system-config.js"></script>
   <% } %>
 
+  <!-- Scripts added by Maxence -->
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRopWDbhNLnc08rtX5jdcMZxBY3uxwjR0&libraries=places"></script>
+  <script src="https://cdn.auth0.com/js/lock/10.6/lock.min.js"></script>
   <!-- libs:js -->
   <!-- endinject -->
 
   <!-- inject:js -->
   <!-- endinject -->
 
+  <!-- Scripts added by Maxence -->
+  <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+  <script type="text/javascript">
+    var z; // DEBUG
+    
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBBEvO40tPmExIrrjf74faT_PEaQRyeLaM",
+      authDomain: "spotnic-1957.firebaseapp.com",
+      databaseURL: "https://spotnic-1957.firebaseio.com",
+      storageBucket: "spotnic-1957.appspot.com",
+      messagingSenderId: "670517937903"
+    };
+    firebase.initializeApp(config);
+  </script>
+
   <% if (BUILD_TYPE === 'dev') { %>
   <script>
   System.import('<%= BOOTSTRAP_MODULE %>')
     .catch(function (e) {
-      console.error(e.stack || e,
-        'Not expecting this error? Report it at https://github.com/mgechev/angular-seed/issues');
+      console.error(e,
+        'Report this error at https://github.com/mgechev/angular2-seed/issues');
     });
   </script>
   <% } %>

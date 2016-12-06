@@ -1,0 +1,230 @@
+<div class="parking-detail card">
+  
+  <button
+    type="button"
+    class="close"
+    data-dismiss="alert"
+    aria-label="Close"
+    (click)="close()">
+      <span aria-hidden="true">&times;</span>
+  </button>
+
+  <!--
+    To see how to crop images:
+    http://jonathannicol.com/blog/2014/06/16/centre-crop-thumbnails-with-css/
+  -->
+  <div class="cover">
+    <img src="img/parkings/paris-rex-atrium-{{offer.parking.id}}.jpg">
+    <!-- <ng2-datetimepicker [ID]="'dateFrom'" (dateSelected)="dateFromSelected($event)"></ng2-datetimepicker> -->
+
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6 col-lg-7">
+      <h2>{{offer.parking.name}}</h2>
+      <div class="address">{{offer.parking.address}}, {{offer.parking.postcode}} {{offer.parking.city}}</div>
+      <hr>
+      <div class="row summary-icons">
+        <div class="col-sm-4">
+          <i class="glyphicon icomoon icon-unfold_less"></i>
+          <p class="description" *ngIf="offer.parking.maxHeight">Hauteur limitée à {{offer.parking.maxHeight}}m</p>
+          <p class="description" *ngIf="!offer.parking.maxHeight">Aucune hauteur limite</p>
+        </div>
+        <div class="col-sm-4">
+          <i class="glyphicon icomoon icon-schedule"></i>
+          <p class="description">Ouverture 24h/24 et 7j/7</p>
+        </div>
+        <div class="col-sm-4">
+          <i class="glyphicon icomoon icon-home"></i>
+          <p class="description">Parking couvert</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6 col-lg-5">
+      <table class="booking-widget">
+        <thead>
+          <tr>
+            <th>
+              <span class="price">{{offer.price | eurCurrency}}</span> <br>
+              {{offer.walkingDist}} - <i class="glyphicon icomoon icon-directions_walk"></i>{{offer.walkingTime}} min
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <p class="label-button">Début du stationnement</p>
+              <button type="button" class="btn btn-default">19 déc. 2016 à 10:00</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="label-button">Fin du stationnement</p>
+              <button type="button" class="btn btn-default">20 déc. 2016 à 18:00</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="label-button">Véhicule</p>
+              <button type="button" class="btn btn-default">Voiture standard</button>
+            </td>
+          </tr>
+        <!-- </tbody> -->
+        <!-- <tfoot> -->
+          <tr>
+            <td>
+            <button type="button" class="btn btn-primary btn-booking" (click)="modal.open()">Réserver une place</button>
+          </tr>
+        <!-- </tfoot> -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+  <hr>
+
+
+  <div class="row" *ngIf="offer.parking.services">
+    <div class="col-sm-3"><strong>Services</strong></div>
+    <div class="col-sm-9">
+      <div class="row">
+        <div class="col-lg-4 col-sm-6 service" *ngIf="offer.parking.services.guard">
+          <i class="icon-security_guard"></i> Gardien
+        </div>
+        <div class="col-lg-4 col-sm-6 service" *ngIf="offer.parking.services.disabled">
+          <i class="icon-disabled"></i> Accès handicapé
+        </div>
+        <div class="col-lg-4 col-sm-6 service" *ngIf="offer.parking.services.surveillance">
+          <i class="icon-camera_surveillance"></i> Vidéo-surveillance
+        </div>
+        <div class="col-lg-4 col-sm-6 service" *ngIf="offer.parking.services.charger">
+          <i class="icon-electric_car"></i> Recharge électrique
+        </div>
+        <div class="col-lg-4 col-sm-6 service" *ngIf="offer.parking.services.elevator">
+          <i class="icon-elevator_sign"></i> Ascenseur
+        </div>
+        <div class="col-lg-4 col-sm-6 service" *ngIf="offer.parking.services.toilet">
+          <i class="icon-toilet"></i> Toilettes
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr *ngIf="offer.parking.services">
+
+
+  <div class="row">
+    <div class="col-sm-3"><strong>Détail de l'offre</strong></div>
+    <div class="col-sm-9">
+      <ul>
+        <!-- <li>Paiement : <strong>12,50€ à payer en ligne</strong></li> -->
+        <li>Annulation : <strong>gratuite jusqu'à 2h avant</strong></li>
+        <li *ngIf="offer.parking.company">Exploitant : <strong>{{offer.parking.company}}</strong></li>
+        <!-- <li>Entrée / sortie : <strong>unique</strong></li> -->
+        <!-- <li>Durée du stationnement : <strong>15 heures</strong></li> -->
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-sm-3"><strong>Accès au parking</strong></div>
+    <div class="col-sm-9">
+      <div [innerHTML]="offer.parking.parkingAccess | sanitizeHtml"></div>
+      <!-- {{offer.parking.parkingAccess | sanitizeHtml}} -->
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-sm-3"><strong>Des questions&nbsp;?</strong></div>
+    <div class="col-sm-9">
+      <div class="row">
+        <div class="col-sm-6 contact-box">
+          <img src="img/icon-astronaut.png" class="big-icon">
+          <p class="">
+            Appelez-nous au<br>
+            <u><a href="tel:+33634012345">06.34.01.23.45</a></u>
+          </p>
+        </div>
+        <div class="col-sm-6 contact-box">
+          <img src="img/icon-send.png" class="big-icon">
+          <p class="">
+            Envoyez-nous un email à<br>
+            <u><a href="mailto:hello@spotnic.co">hello@spotnic.co</a></u>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+<!-- Modal -->
+<modal #modal>
+  <modal-header [show-close]="true">
+    <h4 class="modal-title">Rentrez vos coordonnées</h4>
+  </modal-header>
+  <modal-body>
+    <form class="form-horizontal"
+      [formGroup]="bookingForm"
+      (ngSubmit)="onSubmit(bookingForm.value)">
+      <div class="form-group">
+        <label for="firstname" class="col-sm-3 control-label">Prénom</label>
+        <div class="col-sm-9">
+          <input 
+            id="firstname" 
+            type="text"
+            class="form-control"
+            formControlName="firstname"
+            />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="lastname" class="col-sm-3 control-label">Nom</label>
+        <div class="col-sm-9">
+          <input 
+            id="lastname" 
+            type="text"
+            class="form-control"
+            formControlName="lastname"
+            />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email" class="col-sm-3 control-label">Email</label>
+        <div class="col-sm-9">
+          <input 
+            id="email" 
+            type="email"
+            class="form-control"
+            formControlName="email"
+            />
+          <p class="text-danger" *ngIf="bookingForm.controls['email'].errors && bookingForm.controls['email'].touched">Ce champ est obligatoire</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-12">
+          <button type="submit" class="btn btn-primary pull-right" *ngIf="step == 1">Etape suivante</button>
+        </div>
+      </div>
+    </form>
+    <div *ngIf="step == 2">
+      <hr>
+      <div class="center">
+        <img src="img/icon-satellite.png" class="big-icon">
+        <br>
+        <p class="lead">Merci {{bookingForm.value['firstname']}} ! Nous allons vous envoyer la suite des instructions par email d'ici quelques minutes ;)</p>
+      </div>
+    </div>
+  </modal-body>
+</modal>

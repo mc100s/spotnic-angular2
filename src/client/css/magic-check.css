@@ -1,0 +1,261 @@
+/*!
+ * Source: http://www.cssscript.com/beautiful-checkbox-and-radio-button-replacement-with-pure-css-magic-check/
+ * Usage:
+ *   You just have to add the class "magic-checkbox" or "magic-radio" to the checkbox/radio inputs
+ */
+
+@keyframes hover-color {
+
+  from {
+    border-color: #c0c0c0; 
+  }
+
+  to {
+    border-color: #3e97eb; 
+  }
+}
+
+.magic-radio,
+.magic-checkbox {
+  position: absolute;
+  display: none;
+}
+
+.magic-radio[disabled],
+.magic-checkbox[disabled] {
+  cursor: not-allowed;
+}
+
+.magic-radio + label,
+.magic-checkbox + label {
+  position: relative;
+  display: block;
+  padding-left: 30px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+.magic-radio + label:hover::before,
+.magic-checkbox + label:hover::before {
+  animation-duration: 0.4s;
+  animation-fill-mode: both;
+  animation-name: hover-color;
+}
+.magic-radio + label::before,
+.magic-checkbox + label::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  content: '';
+  border: 1px solid #c0c0c0;
+}
+.magic-radio + label::after,
+.magic-checkbox + label::after {
+  position: absolute;
+  display: none;
+  content: '';
+}
+
+.magic-radio[disabled] + label,
+.magic-checkbox[disabled] + label {
+  cursor: not-allowed;
+  color: #e4e4e4;
+}
+.magic-radio[disabled] + label:hover, .magic-radio[disabled] + label::before, .magic-radio[disabled] + label::after,
+.magic-checkbox[disabled] + label:hover,
+.magic-checkbox[disabled] + label::before,
+.magic-checkbox[disabled] + label::after {
+  cursor: not-allowed;
+}
+.magic-radio[disabled] + label:hover::before,
+.magic-checkbox[disabled] + label:hover::before {
+  border: 1px solid #e4e4e4;
+  animation-name: none;
+}
+.magic-radio[disabled] + label::before,
+.magic-checkbox[disabled] + label::before {
+  border-color: #e4e4e4;
+}
+
+.magic-radio:checked + label::before,
+.magic-checkbox:checked + label::before {
+  animation-name: none;
+}
+
+.magic-radio:checked + label::after,
+.magic-checkbox:checked + label::after {
+  display: block;
+}
+
+.magic-radio + label::before {
+  border-radius: 50%;
+}
+.magic-radio + label::after {
+  top: 6px;
+  left: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3e97eb;
+}
+/*
+
+.magic-radio:checked + label::before {
+  border: 1px solid #3e97eb;
+}
+
+.magic-radio:checked[disabled] + label::before {
+  border: 1px solid #c9e2f9;
+}
+
+.magic-radio:checked[disabled] + label::after {
+  background: #c9e2f9;
+}
+
+.magic-checkbox + label::before {
+  border-radius: 3px;
+}
+
+.magic-checkbox + label::after {
+  top: 2px;
+  left: 7px;
+  box-sizing: border-box;
+  width: 6px;
+  height: 12px;
+  transform: rotate(45deg);
+  border-width: 2px;
+  border-style: solid;
+  border-color: #fff;
+  border-top: 0;
+  border-left: 0;
+}
+
+.magic-checkbox:checked + label::before {
+  border: #3e97eb;
+  background: #3e97eb;
+}
+
+.magic-checkbox:checked[disabled] + label::before {
+  border: #c9e2f9;
+  background: #c9e2f9;
+}*/
+
+
+/*body{
+  -webkit-animation:bugfix infinite 1s
+}
+@-webkit-keyframes bugfix{
+  from{
+    padding:0
+ 
+ }
+  to {
+    padding:0
+ 
+ }
+
+}
+.checkbox-btn,.radio-btn{
+  position:relative;
+  padding-left:20px
+}
+.checkbox-btn input[type="checkbox"],.checkbox-btn input[type="radio"],.radio-btn input[type="checkbox"],.radio-btn input[type="radio"]{
+  position:absolute;
+  opacity:0;
+  z-index:1
+}
+.checkbox-btn label,.radio-btn label{
+  display:inline-block;
+  line-height:24px;
+  vertical-align:middle;
+  position:relative;
+  padding-left:20px;
+  cursor:pointer;
+  user-select:none;
+  color:#424242
+}
+.checkbox-btn label::after,.radio-btn label::after{
+  position:absolute;
+  content:"";
+  width:18px;
+  height:18px;
+  left:0;
+  top:0;
+  margin-left:-18px;
+  background-color:white;
+  border:3px solid #424242;
+  -webkit-border-radius:3px;
+  border-radius:3px;
+  background-clip:padding-box;
+  cursor:pointer
+}
+.checkbox-btn label::before,.radio-btn label::before{
+  position:absolute;
+  content:"";
+  width:10px;
+  height:5px;
+  top:6px;
+  left:6px;
+  margin-left:-18px;
+  border:3px solid #000;
+  border-top:none;
+  border-right:none;
+  background:transparent;
+  -moz-transform:rotate(-45deg);
+  -o-transform:rotate(-45deg);
+  -ms-transform:rotate(-45deg);
+  -webkit-transform:rotate(-45deg);
+  transform:rotate(-45deg);
+  opacity:0;
+  -webkit-transition:all 0.15s ease-in-out;
+  -o-transition:all 0.15s ease-in-out;
+  transition:all 0.15s ease-in-out;
+  z-index:1
+}
+.checkbox-btn label:active::before,.radio-btn label:active::before{
+  opacity:0.3
+}
+.checkbox-btn input[type="checkbox"]:checked+label,.checkbox-btn input[type="radio"]:checked+label,.radio-btn input[type="checkbox"]:checked+label,.radio-btn input[type="radio"]:checked+label{
+  color:#000
+}
+.checkbox-btn input[type="checkbox"]:checked+label::after,.checkbox-btn input[type="radio"]:checked+label::after,.radio-btn input[type="checkbox"]:checked+label::after,.radio-btn input[type="radio"]:checked+label::after{
+  border:3px solid #000
+}
+.checkbox-btn input[type="checkbox"]:checked+label::before,.checkbox-btn input[type="radio"]:checked+label::before,.radio-btn input[type="checkbox"]:checked+label::before,.radio-btn input[type="radio"]:checked+label::before{
+  opacity:1
+}
+.checkbox-btn input[type="checkbox"]:disabled+label,.checkbox-btn input[type="radio"]:disabled+label,.radio-btn input[type="checkbox"]:disabled+label,.radio-btn input[type="radio"]:disabled+label{
+  color:#787878;
+  cursor:default
+}
+.checkbox-btn input[type="checkbox"]:disabled+label::after,.checkbox-btn input[type="radio"]:disabled+label::after,.radio-btn input[type="checkbox"]:disabled+label::after,.radio-btn input[type="radio"]:disabled+label::after{
+  border:3px solid #787878;
+  background-color:#ffffff
+}
+.checkbox-btn input[type="checkbox"]:disabled+label::before,.checkbox-btn input[type="radio"]:disabled+label::before,.radio-btn input[type="checkbox"]:disabled+label::before,.radio-btn input[type="radio"]:disabled+label::before{
+  display:none
+}
+.radio-btn label::after{
+  -webkit-border-radius:50%;
+  border-radius:50%;
+  background-clip:padding-box
+}
+.radio-btn label::before{
+  width:12px;
+  height:12px;
+  border:none;
+  top:6px;
+  left:6px;
+  -webkit-border-radius:50%;
+  border-radius:50%;
+  background-clip:padding-box;
+  background-color:#000000;
+  -moz-transform:rotate(0deg);
+  -o-transform:rotate(0deg);
+  -ms-transform:rotate(0deg);
+  -webkit-transform:rotate(0deg);
+  transform:rotate(0deg)
+}*/
+

@@ -1,12 +1,46 @@
-<p>Angular 2 Seed is a starter project that implements best practices in coding, building and testing Angular 2 apps.</p>
-
-<h2>Features</h2>
+<h2>TODO Angular2</h2>
 <ul>
-  <li>Ready to go, statically typed build system using Gulp for working with TypeScript.</li>
-  <li>Production and development builds.</li>
-  <li>Sample unit tests with Jasmine and Karma including code coverage via Istanbul.</li>
-  <li>End-to-end tests with Protractor.</li>
-  <li>Development server with live reload.</li>
-  <li>TypeScript definition management using Types.</li>
-  <li>Basic Service Worker, which implements "Cache then network strategy".</li>
+  <li>Mettre un système de login</li>
+  <li><strong>https://github.com/auth0/lock#language-dictionary-specification</strong></li>
+  <li>Lorsqu'on affiche un col-*-6 à droite, faire un mouvement de transition de l'élément central vers la gauche</li>
 </ul>
+
+<h2>TODO divers</h2>
+<ul>
+  <li>Intégrer Google Analytics</li>
+  <li>HTTPS</li>
+  <li>Mettre en place un environement de preproduction</li>
+</ul>
+
+<h2>Inspiration</h2>
+<ul>
+  <li>Captain Train</li>
+  <li>Duolingo</li>
+  <li>Save</li>
+</ul>
+
+
+
+<div class="navbar-header">
+  <a class="navbar-brand" href="#">Auth0 - Angular 2</a>
+  <button class="btn btn-primary btn-margin" (click)="auth.login()" *ngIf="!auth.authenticated()">Log In</button>
+  <button class="btn btn-primary btn-margin" (click)="auth.logout()" *ngIf="auth.authenticated()">Log Out</button>
+</div>
+
+
+<div *ngIf="auth.authenticated() && auth.userProfile">
+  <h4>You are logged in</h4>
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Profile</h3>
+      <img [src]="auth.userProfile.picture" alt="" class="profile-img">
+      <p><strong>Name: </strong> {{auth.userProfile.name}}</p>
+      <p><strong>Email: </strong> {{auth.userProfile.email}}</p>
+      <p><strong>Nickname: </strong> {{auth.userProfile.nickname}}</p>
+      <p><strong>Created At: </strong> {{auth.userProfile.created_at}}</p>
+      <p><strong>Updated At: </strong> {{auth.userProfile.updated_at}}</p>
+    </div>
+  </div>
+</div>
+<h4 *ngIf="!auth.authenticated()">You are not logged in, please click 'Log in' button to login</h4>
+<p (click)="test()">Click on me to show details</p>

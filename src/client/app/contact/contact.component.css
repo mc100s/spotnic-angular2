@@ -1,0 +1,23 @@
+:host {
+}
+
+.container {
+  margin-top: 40px;
+}
+
+.contact-box {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .contact-box p.lead {
+    font-size: 18px;
+  }
+}
+
+.contact-box p.lead {
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 0;
+}
