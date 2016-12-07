@@ -223,6 +223,13 @@ input[type="button"] {
   cursor: pointer;
 }
 
+#markerLayer img {
+  border: 2px solid red !important;
+  width: 85% !important;
+  height: 90% !important;
+  border-radius: 5px;
+}
+
 .map-marker {
   position: absolute;
   background-color: #425cbb;

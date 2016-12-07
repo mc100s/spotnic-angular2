@@ -95,8 +95,10 @@ export class PoiComponent implements OnInit {
     let marker = new google.maps.Marker({
       map: this.map,
       position: latLng,
-      title: 'Grand Palais',
-      icon: 'img/marker.svg'
+      // title: 'Grand Palais',
+      icon: 'img/marker.svg',
+      optimized: false,
+      zIndex: 20 // Doesn't seem to work
     });
 
     if (drawCircles) {

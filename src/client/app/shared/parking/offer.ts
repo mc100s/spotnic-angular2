@@ -4,6 +4,8 @@ export class Offer {
   // id: number;
   parking: Parking;
   price?: number;
-  walkingDist: number; // In meters
-  walkingTime: number; // In minutes
+  walkingDist: string; // Text (ex: 1,2 km)
+  walkingTime: number; // Number in minutes
+
+  
 }
