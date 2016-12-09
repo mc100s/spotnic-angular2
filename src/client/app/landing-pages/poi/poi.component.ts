@@ -20,12 +20,14 @@ declare var firebase: any; // TODO: change
 })
 export class PoiComponent implements OnInit {
   // constructor(private auth: AuthService) {}
-  lat: number = 48.865042;
-  lng: number = 2.312889;
+  
+  // Grand Palaid
+  // lat: number = 48.865042;
+  // lng: number = 2.312889;
 
-  // Saint Denis
-  // lat: number = 48.93;
-  // lng: number = 2.35;
+  // Pyramide du Louvre
+  lat: number = 48.861016;
+  lng: number = 2.335839;
 
   defaultDateFrom: Moment;
   defaultDateTo: Moment;
@@ -46,19 +48,33 @@ export class PoiComponent implements OnInit {
 
 
   ngOnInit() {
+    console.log("ngOnInt!!!!!!!!!!!");
+    this.offers = null;
+
     this.recursiveTimeout(200);
 
     this.resizeElements();
 
     this.markers = new Map<any, CustomMarker>();
-    // this.offers = this.parkingService.getOffers(this.lat, this.lng, this.nbOfMinutes);
+    
     this.offers = this.parkingService.getFirebaseOffers(this.lat, this.lng, this.nbOfMinutes);
+
+    // Source: https://developers.google.com/maps/documentation/javascript/?hl=fr
+    let latLng = {lat: this.lat, lng: this.lng};
+
+    // Create a map object and specify the DOM element for display.
+    this.map = new google.maps.Map(document.getElementById('map'), {
+      center: latLng,
+      scrollwheel: false,
+      zoom: 14
+    });
 
     this.offers
       .subscribe(
         (offers: Offer[]) => {
           // setTimeout(() => {
           // }, 1000);
+
           this.markers = new Map<any, CustomMarker>();
           for(var i = 0; i < offers.length; i++) {
             this.markers.set(offers[i].parking.id, new CustomMarker(
@@ -72,16 +88,6 @@ export class PoiComponent implements OnInit {
         },
         error =>  console.log(error)
       );
-
-    // Source: https://developers.google.com/maps/documentation/javascript/?hl=fr
-    let latLng = {lat: this.lat, lng: this.lng};
-
-    // Create a map object and specify the DOM element for display.
-    this.map = new google.maps.Map(document.getElementById('map'), {
-      center: latLng,
-      scrollwheel: false,
-      zoom: 14
-    });
 
     this.drawMarkerWithCircles();
 
@@ -233,8 +239,6 @@ export class PoiComponent implements OnInit {
     // Compute the new price
     if (this.selectedOffer)
       this.selectedOffer.price = this.parkingService.getPrice(this.selectedOffer.parking, this.nbOfMinutes);
-
-    console.log(this.nbOfMinutes);
 
     this.offers = this.parkingService.getFirebaseOffers(this.lat, this.lng, this.nbOfMinutes);
     this.deleteMarkers();

@@ -68,7 +68,10 @@ export class ParkingService {
   }
 
   getFirebaseOffers(lat: number, lng: number, duration: number): Observable<Offer[]> {
-    return this.getFirebaseOffersFromServer(lat, lng, duration);
+    if (!this.offers || this.offers.length == 0)
+      return this.getFirebaseOffersFromServer(lat, lng, duration);
+    else
+      return this.recalculateOffers(lat, lng, duration);
   }
 
   getFirebaseOffersFromServer(lat: number, lng: number, duration: number): Observable<Offer[]> {
@@ -76,7 +79,7 @@ export class ParkingService {
       
       firebase.database().ref('test').once('value').then((snapshot: any) => {
 
-        let offers: Offer[] = [];
+        this.offers = [];
         let destinations: any[] = [];
         let latLngOrigin = new google.maps.LatLng(lat, lng);
         let oneMin2Meters = 73;
@@ -97,13 +100,13 @@ export class ParkingService {
           o.price = this.getPrice(parking, duration)
           o.walkingDist = (approxWalkingDistInMeters/1000).toFixed(1).replace(/\./, ',') + ' km'; // Text
           o.walkingTime = Math.round(approxWalkingDistInMeters/oneMin2Meters); // Number in minutes
-          offers.push(o);
+          this.offers.push(o);
         }
 
-        offers.sort(this.compareOffers); // First sort
+        this.offers.sort(this.compareOffers); // First sort
 
-        for (let i = 0; i < Math.min(offers.length, maxDimensions); i++) {
-          destinations.push(new google.maps.LatLng(offers[i].parking.coord.lat, offers[i].parking.coord.lng));
+        for (let i = 0; i < Math.min(this.offers.length, maxDimensions); i++) {
+          destinations.push(new google.maps.LatLng(this.offers[i].parking.coord.lat, this.offers[i].parking.coord.lng));
         }
 
 
@@ -120,19 +123,31 @@ export class ParkingService {
           }
           else {
             for (let i = 0; i < Math.min(Object.keys(snapshotVal).length, maxDimensions); i++) {
-              offers[i].walkingDist = response.rows[0].elements[i].distance.text;
-              offers[i].walkingTime = Math.ceil(response.rows[0].elements[i].duration.value / 60);
+              this.offers[i].walkingDist = response.rows[0].elements[i].distance.text;
+              this.offers[i].walkingTime = Math.ceil(response.rows[0].elements[i].duration.value / 60);
             }
-            observer.next(offers);
+            observer.next(this.offers);
             observer.complete();
           }
         });
 
-        offers.sort(this.compareOffers); // Second and final sort
+        this.offers.sort(this.compareOffers); // Second and final sort
 
-        observer.next(offers);
+        observer.next(this.offers);
         observer.complete();
       });
+    });
+  }
+
+  recalculateOffers(lat: number, lng: number, duration: number): Observable<Offer[]> {
+    return new Observable<Offer[]>((observer: Observer<Offer[]>) => {
+
+      for (let i = 0; i < this.offers.length; i++) {
+        this.offers[i].price = this.getPrice(this.offers[i].parking, duration);
+      }
+
+      observer.next(this.offers);
+      observer.complete();
     });
   }
 

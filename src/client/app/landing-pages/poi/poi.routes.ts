@@ -3,7 +3,8 @@ import { PoiComponent } from './index';
 
 export const PoiRoutes: Route[] = [
   {
-    path: 'paris/grand-palais',
+    path: '',
+    // path: 'paris/grand-palais',
     component: PoiComponent
   }
 ];
