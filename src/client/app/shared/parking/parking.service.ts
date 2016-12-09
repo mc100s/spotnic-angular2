@@ -11,6 +11,8 @@ declare var firebase: any; // TODO: change
 
 @Injectable()
 export class ParkingService {
+
+  offers: Offer[] = [];
   
   constructor(private http: Http) {}
 
@@ -66,6 +68,10 @@ export class ParkingService {
   }
 
   getFirebaseOffers(lat: number, lng: number, duration: number): Observable<Offer[]> {
+    return this.getFirebaseOffersFromServer(lat, lng, duration);
+  }
+
+  getFirebaseOffersFromServer(lat: number, lng: number, duration: number): Observable<Offer[]> {
     return new Observable<Offer[]>((observer: Observer<Offer[]>) => {
       
       firebase.database().ref('test').once('value').then((snapshot: any) => {
@@ -135,7 +141,7 @@ export class ParkingService {
       return 1;
     if (a.walkingTime < b.walkingTime)
       return -1;
-    // a.walkingTime == b.walkingTime
+    // Now: a.walkingTime == b.walkingTime
     if (a.price > b.price)
       return 1;
     if (a.price < b.price)
@@ -143,7 +149,7 @@ export class ParkingService {
     return 0;
   }
 
-  getPrice(parking: Parking, duration: number): number {
+  getPriceOld(parking: Parking, duration: number): number {
     let infinite = 1000000;
     let res: number = infinite;
     let length = parking.pricingRules ? parking.pricingRules.length : 0;
@@ -152,6 +158,65 @@ export class ParkingService {
         res = Math.min(res, parking.pricingRules[i].price);
     }
     return res != infinite ? res : null;
+  }
+
+  getPrice(parking: Parking, duration: number): number {
+    return this.getPrice2(parking, duration);
+  }
+  
+  getPrice1(parking: Parking, duration: number): number {
+    // Warning, pricing rules must be sorted
+    if (duration <= 0)
+      return 0;
+    let lastAddablePricingRule: any = null;
+    let length = parking.pricingRules ? parking.pricingRules.length : 0;
+    for (let i = 0; i < length; ++i) {
+      let pricingRule = parking.pricingRules[i];
+      if (pricingRule.duration == duration)
+        return pricingRule.price;
+      else if (pricingRule.duration > duration) {
+        if (!lastAddablePricingRule)
+          return pricingRule.price;
+        let div = Math.floor(duration / lastAddablePricingRule.duration);
+        let mod = duration % lastAddablePricingRule.duration;
+        return Math.min(pricingRule.price,
+          div * lastAddablePricingRule.price + this.getPrice1(parking, mod)); // Can be optimized
+      }
+      else {
+        if (pricingRule.isAddable)
+          lastAddablePricingRule = pricingRule;
+      }
+    }
+    return null;
+  }
+
+  getPrice2(parking: Parking, duration: number): number {
+    // Warning, pricing rules must be sorted
+    let infinity = 1000;
+    let res = infinity;
+    let curDuration = duration;
+    let curPrice = 0;
+    let length = parking.pricingRules ? parking.pricingRules.length : 0;
+    for (let i = length-1; i >= 0; i--) {
+      let pricingRule = parking.pricingRules[i];
+      // console.log("Pricing rule " + i + ': ' + pricingRule.duration + ' min = ' + pricingRule.price + '€');
+      if (pricingRule.duration > curDuration) {
+        res = Math.min(res, pricingRule.price + curPrice);
+      }
+      else if (pricingRule.duration == curDuration) {
+        res = Math.min(res, pricingRule.price + curPrice);
+        return res;
+      }
+      else {
+        if (pricingRule.isAddable) {
+          let x = Math.floor(curDuration / pricingRule.duration);
+          res = Math.min(res, (x+1)*pricingRule.price + curPrice);
+          curDuration -= x*pricingRule.duration;
+          curPrice += x*pricingRule.price;
+        }
+      }
+    }
+    return res < infinity ? res : null;
   }
 
   /**

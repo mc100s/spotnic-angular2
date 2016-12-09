@@ -14,7 +14,7 @@
     http://jonathannicol.com/blog/2014/06/16/centre-crop-thumbnails-with-css/
   -->
   <div class="cover">
-    <img src="img/parkings/paris-rex-atrium-{{offer.parking.id}}.jpg">
+    <img [src]="imgUrl" (error)="updateUrl($event)">
     <!-- <ng2-datetimepicker [ID]="'dateFrom'" (dateSelected)="dateFromSelected($event)"></ng2-datetimepicker> -->
 
   </div>
@@ -55,13 +55,13 @@
           <tr>
             <td>
               <p class="label-button">Début du stationnement</p>
-              <button type="button" class="btn btn-default">19 déc. 2016 à 10:00</button>
+              <button type="button" class="btn btn-default">{{dateFrom | momentDate: 'ddd Do MMM YYYY [à] HH[h]mm'}}</button>
             </td>
           </tr>
           <tr>
             <td>
               <p class="label-button">Fin du stationnement</p>
-              <button type="button" class="btn btn-default">20 déc. 2016 à 18:00</button>
+              <button type="button" class="btn btn-default">{{dateFrom | momentDate: 'ddd Do MMM YYYY [à] HH[h]mm'}}</button>
             </td>
           </tr>
           <tr>
@@ -130,7 +130,7 @@
 
   <hr>
 
-  <div class="row">
+  <div class="row" *ngIf="offer.parking.parkingAccess">
     <div class="col-sm-3"><strong>Accès au parking</strong></div>
     <div class="col-sm-9">
       <div [innerHTML]="offer.parking.parkingAccess | sanitizeHtml"></div>
@@ -138,7 +138,7 @@
     </div>
   </div>
 
-  <hr>
+  <hr *ngIf="offer.parking.parkingAccess">
 
   <div class="row">
     <div class="col-sm-3"><strong>Des questions&nbsp;?</strong></div>

@@ -224,12 +224,17 @@ export class PoiComponent implements OnInit {
 
   onSubmit(value: any, isValid: boolean): void {
     console.log(value, isValid);
-
     // return;
 
     let diff = value.to.diff(value.from);
     let d: any = moment.duration(diff);
     this.nbOfMinutes = Math.floor(d.asMinutes());
+
+    // Compute the new price
+    if (this.selectedOffer)
+      this.selectedOffer.price = this.parkingService.getPrice(this.selectedOffer.parking, this.nbOfMinutes);
+
+    console.log(this.nbOfMinutes);
 
     this.offers = this.parkingService.getFirebaseOffers(this.lat, this.lng, this.nbOfMinutes);
     this.deleteMarkers();
@@ -251,7 +256,6 @@ export class PoiComponent implements OnInit {
         },
         error =>  console.log(error)
       );
-
   }
 
   deleteMarkers() {

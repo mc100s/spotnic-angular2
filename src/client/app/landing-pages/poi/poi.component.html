@@ -88,6 +88,8 @@
 <sd-parking-detail
   *ngIf="selectedOffer"
   [offer]="selectedOffer"
+  [dateFrom]="dateFrom"
+  [dateTo]="dateTo"
   [map]="map"
   (onClosed)="onParkingDetailClosed()"
   class="card"

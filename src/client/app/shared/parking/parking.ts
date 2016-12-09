@@ -25,4 +25,5 @@ export class Coord {
 export class PricingRule {
   duration: number; // In minutes
   price: number; // In euro
+  isAddable: boolean;
 }

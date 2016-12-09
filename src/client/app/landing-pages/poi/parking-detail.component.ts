@@ -18,6 +18,8 @@ declare var z: any;
 })
 export class ParkingDetailComponent implements OnInit, OnChanges {
   @Input() offer: Offer;
+  @Input() dateFrom: Moment;
+  @Input() dateTo: Moment;
   @Input() map: any;
   @Output() onClosed = new EventEmitter<boolean>();
 
@@ -25,6 +27,8 @@ export class ParkingDetailComponent implements OnInit, OnChanges {
   step: number = 1;
   lat: number = 48.865042; // DEBUG
   lng: number = 2.312889; // DEBUG
+  imgUrl: string;
+
 
   html = "<strong>Hello</strong> world!";
 
@@ -48,6 +52,7 @@ export class ParkingDetailComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges) {
     // changes.prop contains the old and the new value...
     this.moveMap();
+    this.imgUrl = 'img/parkings/' + this.offer.parking.id + '.jpg';
   }
 
   resizeElements() {
@@ -58,8 +63,8 @@ export class ParkingDetailComponent implements OnInit, OnChanges {
   moveMap() {
     // The right side of the map will be centerd on (lat, lng)
     // TODO: take the barycenter of the search and the parking
-    let lat = this.lat;
-    let lng = this.lng;
+    let lat = (this.lat + this.offer.parking.coord.lat) / 2;
+    let lng = (this.lng + this.offer.parking.coord.lng) / 2;
     
     let bounds = this.map.getBounds();
     let boundsLngWidth: number = bounds.getNorthEast().lng() - bounds.getSouthWest().lng();
@@ -84,6 +89,12 @@ export class ParkingDetailComponent implements OnInit, OnChanges {
     // setTimeout(() => {
       // datetimepickerElement.data("DateTimePicker").minDate(this.dateFrom);
     // }, 100);
+  }
+
+
+  updateUrl(event: any) {
+    console.log("updateUrl", event);
+    this.imgUrl = 'img/parkings/default-image.jpg';
   }
 
   onSubmit(value: any): void {
