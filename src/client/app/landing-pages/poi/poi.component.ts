@@ -21,7 +21,7 @@ declare var firebase: any; // TODO: change
 export class PoiComponent implements OnInit {
   // constructor(private auth: AuthService) {}
   
-  // Grand Palaid
+  // Grand Palais
   // lat: number = 48.865042;
   // lng: number = 2.312889;
 
@@ -56,7 +56,7 @@ export class PoiComponent implements OnInit {
     this.resizeElements();
 
     this.markers = new Map<any, CustomMarker>();
-    
+
     this.offers = this.parkingService.getFirebaseOffers(this.lat, this.lng, this.nbOfMinutes);
 
     // Source: https://developers.google.com/maps/documentation/javascript/?hl=fr
@@ -65,8 +65,12 @@ export class PoiComponent implements OnInit {
     // Create a map object and specify the DOM element for display.
     this.map = new google.maps.Map(document.getElementById('map'), {
       center: latLng,
+      zoom: 14,
       scrollwheel: false,
-      zoom: 14
+      streetViewControl: false,
+      clickableIcons: false,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      disableDefaultUI: true
     });
 
     this.offers
@@ -102,7 +106,8 @@ export class PoiComponent implements OnInit {
       map: this.map,
       position: latLng,
       // title: 'Grand Palais',
-      icon: 'img/marker.svg',
+      // icon: 'img/marker.svg',
+      icon: 'img/marker.png',
       optimized: false,
       zIndex: 20 // Doesn't seem to work
     });

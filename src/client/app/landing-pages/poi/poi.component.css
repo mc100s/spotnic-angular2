@@ -50,12 +50,20 @@
 
 .parkings-list {
   position: absolute;
-  /*position: relative;*/
   z-index: 50;
-  height: 500px;
-  overflow-y: auto;
-  overflow-x: hidden;
   float: left;
+  height: 300px; /* The value will be computed */
+  width: 320px;
+  overflow: hidden;
+}
+
+.parkings-list-child {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: -17px;
+  overflow-y: scroll;
 }
 
 .parkings-list .card {
@@ -171,17 +179,25 @@ table.card .white-col {
 sd-parking-detail {
   position: absolute;
   z-index: 10;
-  height: 400px; /* Value computed */
+  height: 300px; /* The value will be computed */
   width: 40%;
   min-width: 400px;
   left: 320px;
   margin-top: 10px;
-  overflow-y: scroll;
+  overflow: hidden;
 }
 
 .parking-detail {
   padding-bottom: 20px;
   color: #484848;
+
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: -17px;
+  overflow-y: scroll;
 }
 
 .parking-detail > .row {
@@ -283,8 +299,6 @@ sd-parking-detail {
 .parking-detail .booking-widget tbody {
   border: 1px solid #425cbb;
   border-top: none;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
 }
 
 .parking-detail .booking-widget td {
@@ -343,6 +357,9 @@ sd-parking-detail {
 /* ***** Media for small screns ***** */
 /* ********************************** */
 @media screen and (max-width: 1200px) {
+  .parkings-list {
+    width: 260px;
+  }
   .parkings-list .card {
     height: 80px;
     font-size: 90%;
@@ -365,7 +382,7 @@ sd-parking-detail {
 
 /* TEST */
 
-::-webkit-scrollbar{
+/*::-webkit-scrollbar{
   width:0px;
 } 
 
@@ -377,3 +394,4 @@ sd-parking-detail {
   background-color:rgba(0,0,0, 0.2);
 } 
 
+*/

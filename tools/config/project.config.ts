@@ -14,7 +14,8 @@ export class ProjectConfig extends SeedConfig {
   // @doc: https://github.com/mgechev/angular-seed/wiki/Add-external-fonts
   FONTS_DEST = `${this.APP_DEST}/fonts`;
   FONTS_SRC = [
-    'node_modules/bootstrap/dist/fonts/**'
+    'node_modules/bootstrap/dist/fonts/**',
+    'src/client/fonts/montserrat/**'
   ];
 
   constructor() {

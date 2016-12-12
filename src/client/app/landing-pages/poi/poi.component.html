@@ -53,36 +53,36 @@
 </div>
 
 <div id="parkings-list" class="parkings-list">
-
-  <table 
-    *ngFor="let offer of offers | async"
-    class="card clickable id-{{offer.parking.id}}"
-    (click)="onSelect(offer)"
-    (mouseenter)='onHover(offer.parking)'
-    (mouseleave)='onEndHover(offer.parking)'
-    >
-    <tbody>
-      <tr>
-        <td class="white-col">
-          <div class="parking-name">
-            {{offer.parking.name}}
-          </div>
-          <div class="parking-address">
-            {{offer.parking.address}}, {{offer.parking.postcode}} {{offer.parking.city}}
-          </div>
-          <!-- <div class="parking-services">
-            <i class="glyphicon icomoon icon-home" tooltip="Parking couvert"></i>
-          </div> -->
-        </td>
-        <td class="blue-col">
-          <span class="price">{{offer.price | eurCurrency}}</span> <br>
-          {{offer.walkingDist}} <br>
-          <i class="glyphicon icomoon icon-directions_walk"></i>{{offer.walkingTime}} min
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
+  <div class="parkings-list-child">
+    <table 
+      *ngFor="let offer of offers | async"
+      class="card clickable id-{{offer.parking.id}}"
+      (click)="onSelect(offer)"
+      (mouseenter)='onHover(offer.parking)'
+      (mouseleave)='onEndHover(offer.parking)'
+      >
+      <tbody>
+        <tr>
+          <td class="white-col">
+            <div class="parking-name">
+              {{offer.parking.name}}
+            </div>
+            <div class="parking-address">
+              {{offer.parking.address}}, {{offer.parking.postcode}} {{offer.parking.city}}
+            </div>
+            <!-- <div class="parking-services">
+              <i class="glyphicon icomoon icon-home" tooltip="Parking couvert"></i>
+            </div> -->
+          </td>
+          <td class="blue-col">
+            <span class="price">{{offer.price | eurCurrency}}</span> <br>
+            {{offer.walkingDist}} <br>
+            <i class="glyphicon icomoon icon-directions_walk"></i>{{offer.walkingTime}} min
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <sd-parking-detail
