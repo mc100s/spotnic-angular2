@@ -8,15 +8,29 @@
 
       <!-- We'll add our form controls here -->
 
+    <div class="form-group">
+      <label class="sr-only">Destination</label>
+      <div class="inner-addon left-addon">
+        <i class="glyphicon icomoon icon-room"></i>
+        <input  
+          id="autocomplete"
+          placeholder="Destination"
+          spellcheck="false"
+          class="form-control long-input"
+          formControlName="destination"
+          (focus)="inputSelected = 'destination'"
+          (focusout)="inputSelected = ''">
+      </div>
+    </div>
 
     <div class="form-group">
       <label class="sr-only">Entrée</label>
       <div class="inner-addon left-addon">
         <i class="glyphicon icomoon icon-date_from"></i>
-        <input  
+        <input
           placeholder="Entrée"
           spellcheck="false"
-          class="form-control date-input"
+          class="form-control long-input"
           formControlName="from"
           value="{{dateFrom | momentDate }}" 
           (focus)="inputSelected = 'from'"
@@ -35,7 +49,7 @@
         <input
           placeholder="Sortie" 
           spellcheck="false"
-          class="form-control date-input"
+          class="form-control long-input"
           formControlName="to"
           value="{{dateTo | momentDate }}" 
           (focus)="inputSelected = 'to'"
@@ -91,6 +105,8 @@
   [dateFrom]="dateFrom"
   [dateTo]="dateTo"
   [map]="map"
+  [lat]="lat"
+  [lng]="lng"
   (onClosed)="onParkingDetailClosed()"
   class="card"
   ></sd-parking-detail>

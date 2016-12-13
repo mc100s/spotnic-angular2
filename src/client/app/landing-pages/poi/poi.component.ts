@@ -36,10 +36,13 @@ export class PoiComponent implements OnInit {
   offers: Observable<Offer[]>;
   parkings: any; // Should be removed
 
+  locationMarker : any;
+  circles : any[] = [];
+
   selectedParking: Parking = null;
   selectedOffer: Offer = null;
   selectedPrice: number = null;
-  markers: Map<any, CustomMarker>;
+  priceMarkers: Map<any, CustomMarker>;
 
   map: any;
 
@@ -48,14 +51,13 @@ export class PoiComponent implements OnInit {
 
 
   ngOnInit() {
-    console.log("ngOnInt!!!!!!!!!!!");
     this.offers = null;
 
     this.recursiveTimeout(200);
 
     this.resizeElements();
 
-    this.markers = new Map<any, CustomMarker>();
+    this.priceMarkers = new Map<any, CustomMarker>();
 
     this.offers = this.parkingService.getFirebaseOffers(this.lat, this.lng, this.nbOfMinutes);
 
@@ -67,10 +69,14 @@ export class PoiComponent implements OnInit {
       center: latLng,
       zoom: 14,
       scrollwheel: false,
-      streetViewControl: false,
       clickableIcons: false,
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-      disableDefaultUI: true
+      disableDefaultUI: true, // a way to quickly hide all controls
+      scaleControl: true,
+      zoomControl: true,
+      zoomControlOptions: {
+        style: google.maps.ZoomControlStyle.LARGE 
+      },
+      mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
     this.offers
@@ -79,9 +85,9 @@ export class PoiComponent implements OnInit {
           // setTimeout(() => {
           // }, 1000);
 
-          this.markers = new Map<any, CustomMarker>();
+          this.priceMarkers = new Map<any, CustomMarker>();
           for(var i = 0; i < offers.length; i++) {
-            this.markers.set(offers[i].parking.id, new CustomMarker(
+            this.priceMarkers.set(offers[i].parking.id, new CustomMarker(
               this.map,
               new google.maps.LatLng(offers[i].parking.coord.lat, offers[i].parking.coord.lng),
               this.parkingService.getPrice(offers[i].parking, this.nbOfMinutes),
@@ -99,16 +105,26 @@ export class PoiComponent implements OnInit {
   }
 
   drawMarkerWithCircles(drawCircles: boolean = true): void {
+    if (this.locationMarker) {
+      this.locationMarker.setMap(null);
+    }
+    if (this.circles) {
+      for (let i = 0; i < this.circles.length; i++) {
+          this.circles[i].setMap(null);
+      }
+    }
+    this.circles = [];
+
     let latLng = {lat: this.lat, lng: this.lng};
     
     // Create a marker and set its position.
-    let marker = new google.maps.Marker({
+    this.locationMarker = new google.maps.Marker({
       map: this.map,
       position: latLng,
       // title: 'Grand Palais',
       // icon: 'img/marker.svg',
       icon: 'img/marker.png',
-      optimized: false,
+      optimized: true,
       zIndex: 20 // Doesn't seem to work
     });
 
@@ -116,7 +132,7 @@ export class PoiComponent implements OnInit {
       let oneMin2Meters = 73;
 
       // Create circles
-      new google.maps.Circle({
+      this.circles.push(new google.maps.Circle({
         strokeColor: '#FF0000',
         strokeOpacity: 0.5,
         strokeWeight: 1,
@@ -125,8 +141,8 @@ export class PoiComponent implements OnInit {
         map: this.map,
         center: latLng,
         radius: 15 * oneMin2Meters // 15 min
-      });
-      new google.maps.Circle({
+      }));
+      this.circles.push(new google.maps.Circle({
         strokeColor: '#EEAA00',
         strokeOpacity: 0.5,
         strokeWeight: 1,
@@ -135,8 +151,8 @@ export class PoiComponent implements OnInit {
         map: this.map,
         center: latLng,
         radius: 10 * oneMin2Meters // 10 min
-      });
-      new google.maps.Circle({
+      }));
+      this.circles.push(new google.maps.Circle({
         strokeColor: '#00DD00',
         strokeOpacity: 0.5,
         strokeWeight: 1,
@@ -145,7 +161,7 @@ export class PoiComponent implements OnInit {
         map: this.map,
         center: latLng,
         radius: 5 * oneMin2Meters // 5 min
-      });
+      }));
       let legend = document.getElementById('legend');
       this.map.controls[google.maps.ControlPosition.BOTTOM].push(legend);
     }
@@ -167,14 +183,14 @@ export class PoiComponent implements OnInit {
     this.selectedParking = parking;
     this.selectedPrice = this.parkingService.getPrice(parking, this.nbOfMinutes);
     
-    let marker = this.markers.get(parking.id);
+    let marker = this.priceMarkers.get(parking.id);
     if (marker)
       marker.addClass('select');
   }
 
   onParkingDetailClosed() {
     if (this.selectedOffer) {
-      let marker = this.markers.get(this.selectedOffer.parking.id);
+      let marker = this.priceMarkers.get(this.selectedOffer.parking.id);
       if (marker)
         marker.removeClass('select');
       this.selectedOffer = null;
@@ -182,13 +198,13 @@ export class PoiComponent implements OnInit {
   }
 
   onHover(parking: Parking) {
-    let marker = this.markers.get(parking.id);
+    let marker = this.priceMarkers.get(parking.id);
     if (marker)
       marker.addClass('hover');
   }
 
   onEndHover(parking: Parking) {
-    let marker = this.markers.get(parking.id);
+    let marker = this.priceMarkers.get(parking.id);
     if (marker)
       marker.removeClass('hover');
   }
@@ -210,10 +226,29 @@ export class PoiComponent implements OnInit {
 
   initSearch(): void {
     this.searchForm = this.formBuilder.group({
-      // destination: ['', Validators.required],
+      destination: '',
       from: '',
       to: ''
     });
+
+    // Google Autocomplete
+    let inputElement = document.getElementById('autocomplete');
+    // Don't submit form on enter
+    google.maps.event.addDomListener(inputElement, 'keydown', function(e: any) { 
+      if (e.keyCode == 13)
+          e.preventDefault(); 
+    }); 
+    console.log(inputElement);
+    var autocomplete = new google.maps.places.Autocomplete(inputElement,{types: ['geocode']});
+
+    // When the user selects an address from the dropdown, populate the address
+    // fields in the form.
+    autocomplete.addListener('place_changed', () => {
+      let place = autocomplete.getPlace();
+      this.lat = place.geometry.location.lat();
+      this.lng = place.geometry.location.lng();
+    });
+
 
     this.defaultDateFrom = moment().minute(0).second(0).millisecond(0).add(1, 'hour');
     this.defaultDateTo = moment(this.defaultDateFrom).add(this.nbOfMinutes, 'minute');
@@ -237,6 +272,9 @@ export class PoiComponent implements OnInit {
     console.log(value, isValid);
     // return;
 
+    // TEST
+    this.drawMarkerWithCircles();
+
     let diff = value.to.diff(value.from);
     let d: any = moment.duration(diff);
     this.nbOfMinutes = Math.floor(d.asMinutes());
@@ -252,9 +290,9 @@ export class PoiComponent implements OnInit {
         (offers: Offer[]) => {
           // setTimeout(() => {
           // }, 1000);
-          this.markers = new Map<any, CustomMarker>();
+          this.priceMarkers = new Map<any, CustomMarker>();
           for(var i = 0; i < offers.length; i++) {
-            this.markers.set(offers[i].parking.id, new CustomMarker(
+            this.priceMarkers.set(offers[i].parking.id, new CustomMarker(
               this.map,
               new google.maps.LatLng(offers[i].parking.coord.lat, offers[i].parking.coord.lng),
               this.parkingService.getPrice(offers[i].parking, this.nbOfMinutes),
@@ -265,13 +303,15 @@ export class PoiComponent implements OnInit {
         },
         error =>  console.log(error)
       );
+
+    this.map.setCenter(new google.maps.LatLng(this.lat, this.lng));
   }
 
   deleteMarkers() {
-    this.markers.forEach((value: CustomMarker, index: any, map: any) => {
+    this.priceMarkers.forEach((value: CustomMarker, index: any, map: any) => {
       value.setMap(null);
     });
-    this.markers.clear();
+    this.priceMarkers.clear();
   }
 
 }

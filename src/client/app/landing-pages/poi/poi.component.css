@@ -18,7 +18,7 @@
   display: inline-block;
 }
 
-.search-bar .search-form .date-input {
+.search-bar .search-form .long-input {
   width: 290px;
 }
 
@@ -62,7 +62,7 @@
   top: 0;
   bottom: 0;
   left: 0;
-  right: -17px;
+  right: -25px;
   overflow-y: scroll;
 }
 
@@ -196,7 +196,7 @@ sd-parking-detail {
   top: 0;
   bottom: 0;
   left: 0;
-  right: -17px;
+  right: -25px;
   overflow-y: scroll;
 }
 

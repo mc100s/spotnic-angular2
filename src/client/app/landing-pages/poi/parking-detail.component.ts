@@ -21,12 +21,12 @@ export class ParkingDetailComponent implements OnInit, OnChanges {
   @Input() dateFrom: Moment;
   @Input() dateTo: Moment;
   @Input() map: any;
+  @Input() lat: any;
+  @Input() lng: any;
   @Output() onClosed = new EventEmitter<boolean>();
 
   bookingForm: FormGroup;
   step: number = 1;
-  lat: number = 48.865042; // DEBUG
-  lng: number = 2.312889; // DEBUG
   imgUrl: string;
 
 

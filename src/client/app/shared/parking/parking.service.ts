@@ -13,6 +13,8 @@ declare var firebase: any; // TODO: change
 export class ParkingService {
 
   offers: Offer[] = [];
+  lastDestLat: number;
+  lastDestLng: number;
   
   constructor(private http: Http) {}
 
@@ -68,16 +70,20 @@ export class ParkingService {
   }
 
   getFirebaseOffers(lat: number, lng: number, duration: number): Observable<Offer[]> {
-    if (!this.offers || this.offers.length == 0)
-      return this.getFirebaseOffersFromServer(lat, lng, duration);
+    let result: Observable<Offer[]>;
+    if (!this.offers || this.offers.length == 0 || this.lastDestLat != lat || this.lastDestLng != lng)
+      result = this.getFirebaseOffersFromServer(lat, lng, duration);
     else
-      return this.recalculateOffers(lat, lng, duration);
+      result = this.recalculateOffers(lat, lng, duration);
+    this.lastDestLat = lat;
+    this.lastDestLng = lng;
+    return result;
   }
 
   getFirebaseOffersFromServer(lat: number, lng: number, duration: number): Observable<Offer[]> {
     return new Observable<Offer[]>((observer: Observer<Offer[]>) => {
       
-      firebase.database().ref('test').once('value').then((snapshot: any) => {
+      firebase.database().ref('parkings').once('value').then((snapshot: any) => {
 
         this.offers = [];
         let destinations: any[] = [];
