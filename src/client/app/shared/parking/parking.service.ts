@@ -182,7 +182,50 @@ export class ParkingService {
   }
 
   getPrice(parking: Parking, duration: number): number {
-    return this.getPrice2(parking, duration);
+    // Warning, pricing rules must be sorted
+    let bigNumber = this.maxReasonablePrice(duration);
+    let res = bigNumber;
+    let curDuration = duration;
+    let curPrice = 0;
+    let length = parking.pricingRules ? parking.pricingRules.length : 0;
+    for (let i = length-1; i >= 0; i--) {
+      let pricingRule = parking.pricingRules[i];
+      // console.log("Pricing rule " + i + ': ' + pricingRule.duration + ' min = ' + pricingRule.price + '€');
+      if (pricingRule.duration > curDuration) {
+        res = Math.min(res, pricingRule.price + curPrice);
+      }
+      else if (pricingRule.duration == curDuration) {
+        res = Math.min(res, pricingRule.price + curPrice);
+        curDuration = 0;
+        curPrice += pricingRule.price;
+      }
+      else {
+        if (pricingRule.isAddable) {
+          let x = Math.floor(curDuration / pricingRule.duration);
+          res = Math.min(res, (x+1)*pricingRule.price + curPrice);
+          curDuration -= x*pricingRule.duration;
+          curPrice += x*pricingRule.price;
+        }
+      }
+      if (curDuration <= 0) // No more pricingRule can be applied
+        break;
+    }
+    return res < bigNumber ? res : null;
+  }
+
+  /**
+   * Return the maximum reasonable price one should have according to the duration
+   * @param duration (number) The duration, in minutes
+   */
+  maxReasonablePrice(duration: number) {
+    let maxPricePerHour = 5;
+    let maxPricePerDay = 50;
+    let maxPricePerMonth = 500;
+    return 5 + Math.min(
+      maxPricePerHour * Math.ceil(duration/60),
+      maxPricePerDay * Math.ceil(duration/(24*60)),
+      maxPricePerMonth * Math.ceil(duration/(31*24*60))
+    );
   }
   
   getPrice1(parking: Parking, duration: number): number {
@@ -209,35 +252,6 @@ export class ParkingService {
       }
     }
     return null;
-  }
-
-  getPrice2(parking: Parking, duration: number): number {
-    // Warning, pricing rules must be sorted
-    let infinity = 1000;
-    let res = infinity;
-    let curDuration = duration;
-    let curPrice = 0;
-    let length = parking.pricingRules ? parking.pricingRules.length : 0;
-    for (let i = length-1; i >= 0; i--) {
-      let pricingRule = parking.pricingRules[i];
-      // console.log("Pricing rule " + i + ': ' + pricingRule.duration + ' min = ' + pricingRule.price + '€');
-      if (pricingRule.duration > curDuration) {
-        res = Math.min(res, pricingRule.price + curPrice);
-      }
-      else if (pricingRule.duration == curDuration) {
-        res = Math.min(res, pricingRule.price + curPrice);
-        return res;
-      }
-      else {
-        if (pricingRule.isAddable) {
-          let x = Math.floor(curDuration / pricingRule.duration);
-          res = Math.min(res, (x+1)*pricingRule.price + curPrice);
-          curDuration -= x*pricingRule.duration;
-          curPrice += x*pricingRule.price;
-        }
-      }
-    }
-    return res < infinity ? res : null;
   }
 
   /**

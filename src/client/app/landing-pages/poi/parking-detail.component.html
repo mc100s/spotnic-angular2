@@ -140,6 +140,15 @@
 
   <hr *ngIf="offer.parking.parkingAccess">
 
+  <div class="row" [hidden]="!offer.parking.streetView">
+    <div class="col-sm-3"><strong>Street View</strong></div>
+    <div class="col-sm-9">
+      <div id="street-view"></div>
+    </div>
+  </div>
+
+  <hr *ngIf="offer.parking.streetView">
+
   <div class="row">
     <div class="col-sm-3"><strong>Des questions&nbsp;?</strong></div>
     <div class="col-sm-9">

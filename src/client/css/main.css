@@ -302,3 +302,8 @@ input[type="button"] {
   top: 11px;
   right: 30px;
 }
+
+
+#street-view .gm-style-cc {
+  visibility: hidden !important; 
+}

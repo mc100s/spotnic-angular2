@@ -351,6 +351,13 @@ sd-parking-detail {
   line-height: 1.1em;
 }
 
+#street-view {
+  height: 200px;
+}
+
+/*#street-view .gm-iv-address, #street-view .gmnoprint, #street-view .gm-style-cc {
+  visibility: hidden !important; 
+}*/
 
 
 /* ********************************** */

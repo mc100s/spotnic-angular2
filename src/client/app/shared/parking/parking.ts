@@ -15,6 +15,8 @@ export class Parking {
   
   services: any; // Object like: {guard: true, charger: true}
   pricingRules: PricingRule[];
+
+  streetView: StreetView;
 }
 
 export class Coord {
@@ -26,4 +28,11 @@ export class PricingRule {
   duration: number; // In minutes
   price: number; // In euro
   isAddable: boolean;
+}
+
+export class StreetView {
+  lat: number;
+  lng: number;
+  heading: number;
+  pitch: number;
 }

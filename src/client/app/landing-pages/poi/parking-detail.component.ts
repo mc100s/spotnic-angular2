@@ -30,8 +30,6 @@ export class ParkingDetailComponent implements OnInit, OnChanges {
   imgUrl: string;
 
 
-  html = "<strong>Hello</strong> world!";
-
   close() {
     this.onClosed.emit();
   }
@@ -53,6 +51,49 @@ export class ParkingDetailComponent implements OnInit, OnChanges {
     // changes.prop contains the old and the new value...
     this.moveMap();
     this.imgUrl = 'img/parkings/' + this.offer.parking.id + '.jpg';
+
+    if (this.offer.parking.streetView) {
+      let lat = this.offer.parking.streetView.lat;
+      let lng = this.offer.parking.streetView.lng;
+      let heading = this.offer.parking.streetView.heading;
+      let pitch = this.offer.parking.streetView.pitch;
+      if (!lat) lat = 0;
+      if (!lng) lng = 0;
+      if (!heading) heading = 0;
+      if (!pitch) pitch = 0;
+
+      setTimeout(() => {
+        let panorama = new google.maps.StreetViewPanorama(
+          document.getElementById('street-view'),
+          {
+            position: {lat: lat, lng: lng},
+            pov: {heading: heading, pitch: pitch},
+            zoom: 1,
+            addressControl: false,
+            trackingOption: false,
+            linksControl: false,
+            panControl: false,
+            enableCloseButton: false,
+            motionTracking: false,
+            motionTrackingControl: false,
+          }
+        );
+
+        let priceMarker = new google.maps.Marker({
+          map: panorama,
+          position: {lat: this.offer.parking.coord.lat, lng: this.offer.parking.coord.lng},
+          title: this.offer.parking.name,
+          icon: 'img/marker-parking.png',
+        });
+
+        let destinationMarker = new google.maps.Marker({
+          map: panorama,
+          position: {lat: this.lat, lng: this.lng},
+          title: 'Destination',
+          icon: 'img/marker.png',
+        });
+      }, 200);
+    }
   }
 
   resizeElements() {
