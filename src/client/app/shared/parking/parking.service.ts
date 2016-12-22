@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { Observer } from 'rxjs/Observer';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import { Config } from '../index';
 import { Parking, Offer } from './index';
 
 declare var google: any;
@@ -83,7 +84,8 @@ export class ParkingService {
   getFirebaseOffersFromServer(lat: number, lng: number, duration: number): Observable<Offer[]> {
     return new Observable<Offer[]>((observer: Observer<Offer[]>) => {
       
-      firebase.database().ref('parkings').once('value').then((snapshot: any) => {
+      let reference = document.location.host.endsWith('spotnic.co') ? 'parkings' : 'test';
+      firebase.database().ref(reference).once('value').then((snapshot: any) => {
 
         this.offers = [];
         let destinations: any[] = [];

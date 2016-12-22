@@ -32,7 +32,8 @@
         </div>
         <div class="col-sm-4">
           <i class="glyphicon icomoon icon-schedule"></i>
-          <p class="description">Ouverture 24h/24 et 7j/7</p>
+          <p class="description" *ngIf="offer.parking.openingHours">{{offer.parking.openingHours}}</p>
+          <p class="description" *ngIf="!offer.parking.openingHours">Ouverture 24h/24 et 7j/7</p>
         </div>
         <div class="col-sm-4">
           <i class="glyphicon icomoon icon-home"></i>
@@ -55,19 +56,19 @@
           <tr>
             <td>
               <p class="label-button">Début du stationnement</p>
-              <button type="button" class="btn btn-default">{{dateFrom | momentDate: 'ddd Do MMM YYYY [à] HH[h]mm'}}</button>
+              <button type="button" class="btn btn-sm btn-default">{{dateFrom | momentDate: 'DD/MM/YYYY [à] HH[h]mm'}}</button>
             </td>
           </tr>
           <tr>
             <td>
               <p class="label-button">Fin du stationnement</p>
-              <button type="button" class="btn btn-default">{{dateFrom | momentDate: 'ddd Do MMM YYYY [à] HH[h]mm'}}</button>
+              <button type="button" class="btn btn-sm btn-default">{{dateTo | momentDate: 'DD/MM/YYYY [à] HH[h]mm'}}</button>
             </td>
           </tr>
           <tr>
             <td>
               <p class="label-button">Véhicule</p>
-              <button type="button" class="btn btn-default">Voiture standard</button>
+              <button type="button" class="btn btn-sm btn-default">Voiture standard</button>
             </td>
           </tr>
         <!-- </tbody> -->

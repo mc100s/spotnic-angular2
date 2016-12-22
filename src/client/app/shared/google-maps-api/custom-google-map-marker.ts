@@ -36,7 +36,7 @@ CustomMarker.prototype.draw = function() {
   if (!div) {
   
     div = this.div = document.createElement('div');
-    let units = this.price == null ? '?' : Math.floor(this.price);
+    let units = this.price == null ? 'P' : Math.floor(this.price);
     let decimals = this.price == null ? '' : this.price.toFixed(2).slice(-2);
     let currency = this.price == null ? '' : '€';
     
