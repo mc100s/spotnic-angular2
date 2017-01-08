@@ -345,6 +345,7 @@ export class SeedConfig {
    */
   SYSTEM_CONFIG_DEV: any = {
     defaultJSExtensions: true,
+    strictImportSequence: true,
     paths: {
       [this.BOOTSTRAP_MODULE]: `${this.APP_BASE}${this.BOOTSTRAP_MODULE}`,
       '@angular/common': 'node_modules/@angular/common/bundles/common.umd.js',
@@ -388,6 +389,7 @@ export class SeedConfig {
    */
   SYSTEM_BUILDER_CONFIG: any = {
     defaultJSExtensions: true,
+    strictImportSequence: true,
     base: this.PROJECT_ROOT,
     packageConfigPaths: [
       join('node_modules', '*', 'package.json'),

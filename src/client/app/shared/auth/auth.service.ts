@@ -30,12 +30,13 @@ export class AuthService {
         },
         {
           name: "phone",
-          placeholder: "06.XX.XX.XX.XX",
+          placeholder: "06.XX.XX.XX.XX (facultatif)",
           // The following properties are optional
           icon: "img/smartphone.png",
-          validator: function(address: string) {
+          validator: function(val: string) {
             return {
-              valid: address.length >= 10,
+              valid: true,
+              // valid: val.length >= 10,
               hint: "Doit contenir au moins 10 chiffres" // optional
             };
           }

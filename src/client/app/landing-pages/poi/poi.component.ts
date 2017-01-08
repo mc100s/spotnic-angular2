@@ -238,8 +238,14 @@ export class PoiComponent implements OnInit {
       if (e.keyCode == 13)
           e.preventDefault(); 
     }); 
-    console.log(inputElement);
-    var autocomplete = new google.maps.places.Autocomplete(inputElement,{types: ['geocode']});
+    var circle = new google.maps.Circle({
+        center: this.getNavigatorLocation(),
+        radius: 500*1000
+    });
+    var autocomplete = new google.maps.places.Autocomplete(inputElement,{
+      types: ['geocode'],
+      bounds: circle.getBounds(),
+    });
 
     // When the user selects an address from the dropdown, populate the address
     // fields in the form.
@@ -254,6 +260,16 @@ export class PoiComponent implements OnInit {
     this.defaultDateTo = moment(this.defaultDateFrom).add(this.nbOfMinutes, 'minute');
     this.dateFromSelected(this.defaultDateFrom);
     this.dateToSelected(this.defaultDateTo);
+  }
+
+  getNavigatorLocation(): any {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position: any) {
+        return new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+      });
+    }
+    // Default location: Paris
+    return new google.maps.LatLng(48.85, 2.35);
   }
 
   dateFromSelected(date: Moment): void {

@@ -1,5 +1,7 @@
 // Load our SystemJS configuration.
 System.config({
-  baseURL: '/base/'
+  // baseURL: '/base/',
+  baseURL: '/maxence/',
+  strictImportSequence: true
 });
 

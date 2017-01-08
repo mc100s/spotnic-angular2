@@ -53,22 +53,23 @@ CustomMarker.prototype.draw = function() {
       div.dataset.parkingId = self.parkingId;
     }
 
-    let cardElement = jQuery('.card.id-' + self.parkingId);
+    let selector = '.card.id-' + self.parkingId;
     
     google.maps.event.addDomListener(div, "click", function(event: any) {
-      // alert('You clicked on a custom marker!');     
-      cardElement.click();
+      // alert('You clicked on a custom marker!');
+      console.log('.card.id-' + self.parkingId);
+      jQuery(selector).click();
       // google.maps.event.trigger(self, "click");
     });
 
     google.maps.event.addDomListener(div, "mouseenter", function(event: any) {
       self.addClass('hover');
-      cardElement.addClass('hover');
+      jQuery(selector).addClass('hover');
       // google.maps.event.trigger(self, "click");
     });
     google.maps.event.addDomListener(div, "mouseleave", function(event: any) {
       self.removeClass('hover');   
-      cardElement.removeClass('hover');
+      jQuery(selector).removeClass('hover');
       // google.maps.event.trigger(self, "click");
     });
     

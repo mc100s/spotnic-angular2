@@ -16,6 +16,8 @@ export class ParkingService {
   offers: Offer[] = [];
   lastDestLat: number;
   lastDestLng: number;
+
+  globalDiscountPercentage = 0.2;
   
   constructor(private http: Http) {}
 
@@ -94,7 +96,8 @@ export class ParkingService {
 
         let snapshotVal = snapshot.val();
 
-        let maxDimensions = 25;
+        let minDimensions = 10;
+        let maxDimensions = 25; // Google Maps API can't be used if a value > 25
         for(let index in snapshotVal) { 
           let parking = snapshotVal[index];
           let latLngDest = new google.maps.LatLng(parking.coord.lat, parking.coord.lng);
@@ -113,7 +116,11 @@ export class ParkingService {
 
         this.offers.sort(this.compareOffers); // First sort
 
-        for (let i = 0; i < Math.min(this.offers.length, maxDimensions); i++) {
+        // Keep at most maxDimensions elements
+        if (this.offers.length > maxDimensions)
+          this.offers = this.offers.slice(0, maxDimensions);
+
+        for (let i = 0; i < this.offers.length; i++) {
           destinations.push(new google.maps.LatLng(this.offers[i].parking.coord.lat, this.offers[i].parking.coord.lng));
         }
 
@@ -130,19 +137,27 @@ export class ParkingService {
             console.log('Error was: ' + status);
           }
           else {
-            for (let i = 0; i < Math.min(Object.keys(snapshotVal).length, maxDimensions); i++) {
+            // Push the data from the Google API
+            for (let i = 0; i < this.offers.length; i++) {
               this.offers[i].walkingDist = response.rows[0].elements[i].distance.text;
               this.offers[i].walkingTime = Math.ceil(response.rows[0].elements[i].duration.value / 60);
             }
-            observer.next(this.offers);
-            observer.complete();
+
+            this.offers.sort(this.compareOffers); // Second and final sort
+
+            // Remove the points too far
+            for (let i = minDimensions; i < this.offers.length; i++) {
+              if (this.offers[i].walkingTime > 35){
+                this.offers = this.offers.slice(0, i);
+                break;
+              }
+            }
           }
+          observer.next(this.offers);
+          observer.complete();
         });
 
-        this.offers.sort(this.compareOffers); // Second and final sort
 
-        observer.next(this.offers);
-        observer.complete();
       });
     });
   }
@@ -212,7 +227,8 @@ export class ParkingService {
       if (curDuration <= 0) // No more pricingRule can be applied
         break;
     }
-    return res < bigNumber ? res : null;
+    // return res < bigNumber ? res : null;
+    return (1 - this.globalDiscountPercentage) * Math.min(res, bigNumber); // Solution to always return a price
   }
 
   /**
@@ -221,8 +237,8 @@ export class ParkingService {
    */
   maxReasonablePrice(duration: number) {
     let maxPricePerHour = 5;
-    let maxPricePerDay = 50;
-    let maxPricePerMonth = 500;
+    let maxPricePerDay = 35;
+    let maxPricePerMonth = 245;
     return 5 + Math.min(
       maxPricePerHour * Math.ceil(duration/60),
       maxPricePerDay * Math.ceil(duration/(24*60)),
