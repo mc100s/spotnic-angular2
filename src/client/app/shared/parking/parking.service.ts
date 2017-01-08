@@ -8,6 +8,7 @@ import { Config } from '../index';
 import { Parking, Offer } from './index';
 
 declare var google: any;
+declare var mixpanel: any;
 declare var firebase: any; // TODO: change
 
 @Injectable()
@@ -73,6 +74,12 @@ export class ParkingService {
   }
 
   getFirebaseOffers(lat: number, lng: number, duration: number): Observable<Offer[]> {
+    mixpanel.track('Search', {
+      lat: lat,
+      lng: lng,
+      duration: duration,
+    });
+
     let result: Observable<Offer[]>;
     if (!this.offers || this.offers.length == 0 || this.lastDestLat != lat || this.lastDestLng != lng)
       result = this.getFirebaseOffersFromServer(lat, lng, duration);

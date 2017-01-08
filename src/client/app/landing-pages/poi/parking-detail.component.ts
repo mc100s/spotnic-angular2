@@ -7,6 +7,7 @@ import { Parking, Offer } from '../../shared/parking/index';
 import { EurCurrencyPipe } from '../../shared/pipes/index';
 
 declare var google: any;
+declare var mixpanel: any;
 declare var window: any;
 declare var z: any;
 
@@ -28,6 +29,7 @@ export class ParkingDetailComponent implements OnInit, OnChanges {
   bookingForm: FormGroup;
   step: number = 1;
   imgUrl: string;
+  modal: any;
 
 
   close() {
@@ -38,6 +40,13 @@ export class ParkingDetailComponent implements OnInit, OnChanges {
               private formBuilder: FormBuilder) {}
 
   ngOnInit() {
+    mixpanel.track('Click on parking detail', {
+      parkingId: this.offer.parking.id,
+      price: this.offer.price,
+      dateFrom: this.dateFrom.toISOString(),
+      dateTo: this.dateTo.toISOString(),
+    });
+
     this.resizeElements();
 
     this.bookingForm = this.formBuilder.group({
@@ -138,7 +147,24 @@ export class ParkingDetailComponent implements OnInit, OnChanges {
     this.imgUrl = 'img/parkings/default-image.jpg';
   }
 
+  openModal(modal: any){
+    mixpanel.track('Booking click', {
+      parkingId: this.offer.parking.id,
+      price: this.offer.price,
+      dateFrom: this.dateFrom.toISOString(),
+      dateTo: this.dateTo.toISOString(),
+    });
+    modal.open();
+  }
+
   onSubmit(value: any): void {
+    mixpanel.track('Booking validated', {
+      parkingId: this.offer.parking.id,
+      price: this.offer.price,
+      dateFrom: this.dateFrom.toISOString(),
+      dateTo: this.dateTo.toISOString(),
+    });
+
     console.log("Call of onSubmit");
     value.offer = this.offer;
     if (this.bookingForm.controls['email'].valid) {
