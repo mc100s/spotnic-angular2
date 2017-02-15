@@ -167,6 +167,8 @@ export class ParkingDetailComponent implements OnInit, OnChanges {
 
     console.log("Call of onSubmit");
     value.offer = this.offer;
+    value.dateFrom = this.dateFrom.toISOString();
+    value.dateTo = this.dateTo.toISOString();
     if (this.bookingForm.controls['email'].valid) {
       this.requestService.sendBookingRequest(value);
       this.step = 2;
