@@ -111,6 +111,21 @@ export class RequestService {
       );
   }
 
+  sendRequest(data: any, event: string): void {
+    let value1 = this.stringifyObject(data);
+    console.log(value1);
+    let url = 'https://maker.ifttt.com/trigger/'+ event +'/with/key/f28lZ3ZHqQtduDbWEBGSy6K-Qyqar7AhBymco0UVx25?value1=' + encodeURIComponent(value1);
+    this.http.get(url)
+      .map((res: Response) => res.json())
+      .subscribe(
+        data => console.log("Success"),
+        err => console.log("The no 'Access-Control-Allow-Origin' is normal"),
+        () => console.log("Complete")
+      );
+  }
+
+
+
   stringifyObject(o: any, depth: number = 0): string {
     if (typeof o !== 'object')
       return o + '';

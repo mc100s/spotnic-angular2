@@ -14,5 +14,9 @@ import { Config } from './shared/index';
 export class AppComponent {
   constructor() {
     console.log('Environment config', Config);
+    localStorage.setItem('mustRedirect', 'true')
+    setTimeout(() => {
+      localStorage.removeItem('mustRedirect');
+    }, 100);
   }
 }

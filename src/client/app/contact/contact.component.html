@@ -1,44 +1,66 @@
 <div class="container">
-  <div class="row">
+  <div class="search-box">
+    <p class="center lead">
+      Plus besoin de chercher un parking, on le trouve pour vous ! Disponible 24/7.
 
-    <div class="col-sm-4 contact-box">
-      <img src="img/icon-planet-map.png" class="big-icon">
-      <p class="lead">
-        Rencontrez-nous au<br>
-        <u>39 rue du Caire, 75002 Paris</u>
-      </p>
+
+    </p>
+
+    <div class="narrow">
+      <form [formGroup]="contactForm"
+        (ngSubmit)="onSubmit(contactForm.value)">
+        <input 
+          type="tel"
+          class="form-control"
+          placeholder="Téléphone"
+          formControlName="phone"
+          />
+        <input 
+          type="text"
+          class="form-control"
+          placeholder="Destintation"
+          formControlName="destination"
+          />
+        <input 
+          type="text"
+          class="form-control"
+          placeholder="Nom (facultatif)"
+          formControlName="name"
+          />
+
+        <table class="css-table">
+          <tr>
+            <td><input type="checkbox" formControlName="mobileAndNow"></td>
+            <td>Je suis en voiture et je cherche une place tout de suite</td>
+          </tr>
+        </table>
+        
+        <button
+          type="submit"
+          class="btn btn-primary btn-block">
+          Je me fais recontacter
+        </button>
+      </form>
+      
     </div>
 
-    <div class="col-sm-4 contact-box">
-      <img src="img/icon-astronaut.png" class="big-icon">
-      <p class="lead">
-        Appelez-nous au
-        <u><a href="tel:+33634012345">06.34.01.23.45</a></u>
-      </p>
-    </div>
 
-    <div class="col-sm-4 contact-box">
-      <img src="img/icon-send.png" class="big-icon">
-      <p class="lead">
-        Envoyez-nous un email à <u><a href="mailto:hello@spotnic.co">hello@spotnic.co</a></u>
-      </p>
-    </div>
+    <br>
+    <br>
 
-    <div class="clearfix visible-sm visible-md visible-lg"></div>
-
-    <div class="col-sm-4 col-sm-offset-2 contact-box">
-      <img src="img/icon-facebook.png" class="big-icon">
-      <p class="lead">
-        Suivez-nous sur Facebook depuis <u><a href="https://fb.me/spotnic.co">fb.me/spotnic.co</a></u>
-      </p>
-    </div>
-
-    <div class="col-sm-4 contact-box">
-      <img src="img/icon-chatbot.png" class="big-icon">
-      <p class="lead">
-        Echangez avec notre chatbot Spotnic sur <u><a href="https://m.me/spotnic.co">Messenger</a></u>
-      </p>
-    </div>
-
+    <p class="center lead">
+      Ou appelez-nous au <br>
+      <strong><a href="tel:+33634012345">06.34.01.23.45</a></strong>
+    </p>
   </div>
+
+
+
+  <!-- <h1>Pourquoi passer par Spotnic ?</h1>
+
+
+  Notre agent disponible
+ -->
+  
 </div>
+
